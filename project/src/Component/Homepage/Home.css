@@ -34,13 +34,11 @@
   margin-bottom: 1rem;
 }
 .section-image2 {
-  max-width:90%;/* Increased the max-width */
+  max-width: 90%; /* Increased the max-width */
   transition: transform 0.3s ease; /* Added transition for smooth scaling */
-  flex: 1;
   height: 90vh;
   border-radius: 8px;
-  display: flex;
-  justify-content: flex-end;
+  align-self: flex-end; /* Align image to the bottom */
 }
 .hero-container p {
   font-size: 1.2rem;
