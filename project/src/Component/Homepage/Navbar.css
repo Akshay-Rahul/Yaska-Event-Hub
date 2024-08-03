@@ -1,0 +1,149 @@
+/* Base navbar styling */
+.navbar1 {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.7);
+    transition: background 0.3s ease;
+}
+
+.navbar-logo1 {
+    color: #000; /* Default color is black */
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 130px;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-logo1.logo-active {
+    color: #000; /* Default color is black */
+    transform: scale(1.1); /* Optional: Add a slight scaling effect */
+}
+
+.navbar1.transparent {
+    background: transparent;
+}
+
+.navbar1.black-background {
+    background: black;
+}
+
+.navbar1.black-background .navbar-logo1,
+.navbar1.black-background .nav-links1 {
+    color: #fff; /* Change text color to white in black background */
+}
+
+.navbar1.black-background .nav-links1:hover,
+.navbar1.black-background .nav-links1:focus,
+.navbar1.black-background .nav-links1.active {
+    color: #fff; /* Keep text white on hover/focus/active state */
+    transform: scale(1.02);
+    outline: none;
+}
+
+/* Container styling */
+.navbar-container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    max-width: 1700px;
+    padding: 0 24px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Navigation menu styling */
+.nav-menu1 {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+    flex-grow: 1;
+    justify-content: center;
+    margin-left: 0px;
+}
+
+.nav-item1 {
+    height: 80px;
+    margin-left: 50px;
+}
+
+.nav-item1:last-child {
+    margin-right: 0;
+}
+
+/* Navigation Links Styling */
+.nav-links1 {
+    color: #000; /* Default color is black */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1.5rem;
+    height: 100%;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 1.4rem;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links1:hover,
+.nav-links1:focus {
+    color: #000; /* Default color is black */
+    transform: scale(1.02);
+    outline: none;
+}
+
+.nav-links1.active {
+    color: #000; /* Default color is black */
+    transform: scale(1.02);
+    outline: none;
+}
+
+/* Ensure each section takes up the full viewport height */
+.section {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Optional: Different background colors for sections to distinguish them */
+#about {
+    background-color: #f8f9fa;
+}
+
+#service {
+    background-color: #e9ecef;
+}
+
+#test {
+    background-color: #dee2e6;
+}
+
+#contact {
+    background-color: #ffffff00;
+}
+
+#signin {
+    background-color: white;
+}

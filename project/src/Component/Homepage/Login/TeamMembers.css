@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.team-members-section {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: url('bg.jpg') no-repeat center center;
+  background-size: cover;
+  background-color: #161623;
+  min-height: 100vh;
+  color: white;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: rgba(0, 0, 0, 0.7); /* Black background with 70% transparency */
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Similar shadow to .wrapper */
+  border-radius: 10px; /* Updated to match .wrapper */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  transition: 0.5s;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+.container .card:hover .content {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+
+.avatarImg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.adityaAvatar {
+  background-image: url('./femaleAvatar.png');
+}
+
+.akshayAvatar {
+  background-image: url('./Akshay.jpg');
+}
+
+.deepakAvatar {
+  background-image: url('./Deepak.jpg');
+}
+
+.avatarTxt h3 {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600; /* Adjusted for consistency with .login-page */
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0 10px;
+  line-height: 1.1em;
+}
+
+.avatarTxt h3 span {
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: initial;
+}
+
+.socialIcons {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  justify-content: center; /* Center icons horizontally */
+  align-items: center;
+}
+
+.socialIcons li {
+  list-style: none;
+  margin: 0 10px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.5s;
+}
+
+.container .card:hover .socialIcons li {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.socialIcons li a {
+  color: white;
+  font-size: 24px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.socialIcons li a:hover {
+  color: #f39c12; /* Matching hover color from .login-page */
+  transform: scale(1.2); /* Slightly increase the size on hover */
+}

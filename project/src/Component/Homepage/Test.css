@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.test {
+  height: 110vh;
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 40px 20px;
+}
+
+.header2 h2 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.content2 {
+  max-width: 90%;
+}
+
+.header2 p {
+  margin-bottom: 30px;
+  color: #666;
+  font-size: 16px;
+}
+
+.container2 {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card2 {
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 25%;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card2:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1rem auto;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 20px;
+}
+
+.avinashAvatar {
+  background-image: url('./kash.png');
+}
+
+.bharatAvatar {
+  background-image: url('./sam1.png');
+}
+
+.prabhakarAvatar {
+  background-image: url('./emilia.png');
+}
+
+.card-footer2 .rating {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.rating span {
+  font-size: 20px;
+  color: #f5c518; /* Gold color for stars */
+}
+
+.rating span.empty {
+  color: #ddd; /* Light gray for empty stars */
+}
+
+.content2 blockquote {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: center; /* Center text within blockquote */
+}
+
+.card-footer2 h3 {
+  font-size: 20px;
+  color: #333;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.card-footer2 span {
+  color: #666;
+  font-size: 16px;
+}
+
+.view-more {
+  display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    color: white;
+    background-color:black;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-more:hover {
+  background-color: darkgrey;
+}
+
+@media (max-width: 768px) {
+  .container2 {
+    flex-direction: column;
+  }
+
+  .card2 {
+    width: 70%; /* Adjusted width for smaller screens */
+    margin: 20px auto;
+  }
+}

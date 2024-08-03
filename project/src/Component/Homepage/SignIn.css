@@ -1,0 +1,119 @@
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .signin-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-color: #ffffff; /* Changed to match the signin-content background */
+    padding: 0 20px;
+  }
+  
+  .signin-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    padding: 40px;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .signin-content:hover {
+    transform: translateY(-5px);
+  }
+  
+  .signin-text {
+    max-width: 50%;
+    padding-right: 20px;
+  }
+  
+  .signin-text h3 {
+    color: black;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+  
+  .signin-text h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .signin-text p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #666;
+  }
+  
+  .signin-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .signin-button {
+    background-color: black;
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .signin-button:hover {
+    background-color: darkgrey;
+    transform: translateY(-3px);
+  }
+  
+  .signin-button:focus {
+    outline: 2px solid black;
+  }
+  
+  .signin-image img {
+    width: 100%;
+    max-width: 600px; /* Increased the max-width */
+    transition: transform 0.3s ease; /* Added transition for smooth scaling */
+    flex: 1;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .signin-image img:hover {
+    transform: scale(1.05); /* Slightly scales up the image on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .signin-content {
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+  
+    .signin-text {
+      max-width: 100%;
+      text-align: center;
+      padding-right: 0;
+    }
+  
+    .signin-buttons {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .signin-button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    .signin-image img {
+      max-width: 80%;
+      margin-top: 20px;
+    }
+  }
+  
