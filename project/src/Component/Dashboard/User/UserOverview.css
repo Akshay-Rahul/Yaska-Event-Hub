@@ -1,0 +1,152 @@
+/* Overview Component Styles */
+.overview1 {
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: #000000; /* Black text color for better contrast */
+    width: 80vw; /* Adjust width as needed */
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    padding-bottom: 30px; /* Reserve space for the fixed map */
+    position: relative; /* Ensure the map can be positioned fixed */
+    text-align: center; /* Center-align all text within this container */
+  }
+  
+  .overview1 h1 {
+    font-size: 34px;
+    margin: 0 auto 20px; /* Center the heading and add space below */
+    color: #000000; /* Black text color */
+  }
+  
+  .overview-description {
+    font-size: 16px;
+    color: #000000; /* Black for better readability */
+    margin-bottom: 30px;
+  }
+  
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Semi-transparent background for readability */
+    color: #000000;
+    padding: 50px 0;
+    border-radius: 10px;
+    margin-bottom: 30px; /* Space between sections */
+    text-align: center; /* Center text inside the container */
+  }
+  
+  .stat-item {
+    flex: 1;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    margin: 0 20px;
+    background:black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .stat-item h3 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #ffcc00; /* Stat number color */
+  }
+  
+  .stat-item p {
+    font-size: 1.2em;
+    margin: 5px 0 0;
+    color: #fff; /* White text color */
+    font-weight: 400; /* Description color */
+  }
+  
+  /* Chart Container Styles */
+  .charts-container {
+    display: flex;
+    justify-content: space-between; /* Align items to the edges with space between */
+    margin-bottom: 30px; /* Space between sections */
+    padding: 20px 20px 20px 40px; /* Add padding to ensure charts are not flush against the edges, with more space on the left */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    position: relative; /* Allow positioning adjustments */
+  }
+  
+  .chart-item {
+    flex: 1;
+    min-width: 300px; /* Ensure charts are not too small */
+    max-width: 100%; /* Prevent charts from exceeding their container width */
+    background-color: rgba(255, 255, 255, 0.8); /* Light background */
+    padding: 20px;
+    border-radius: 10px;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    margin-top: 20px; /* Space above the charts to move them down */
+    margin-left: 0px; /* Space to the left of the charts to move them left */
+  }
+  
+  /* Map Container Styles */
+  .map-container {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 400px;
+    width: 100%;
+  }
+  .leaflet-control-attribution {
+    display: none !important;
+  }
+  .map-head {
+    padding: 15px; /* Add padding for better spacing */
+    border-radius: 10px; /* Rounded corners for the map header */
+    text-align: center; /* Center-align text */
+    font-size: 28px; /* Increase font size */
+    font-family: 'Arial', sans-serif;
+    font-weight: bold; /* Bold font for emphasis */
+    margin: 20px 0; /* Space around the map header */
+    color: #333; /* Darker color for better readability */
+  }
+  .dashe {
+    display: flex;
+    justify-content: space-between; /* Align items to the edges with space between */
+    margin-bottom: 30px; /* Space between sections */
+    padding: 20px 20px 20px 40px; /* Add padding to ensure charts are not flush against the edges, with more space on the left */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    position: relative; /* Allow positioning adjustments */
+  }
+  
+  .counterList1, .pieChart1 {
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .counter1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  .pieChart1 {
+    padding: 10px; /* Reduced padding */
+    border-radius: 8px;
+    margin: 10px 0; /* Reduced margin */
+  }
+  
+  .counterList1 h2, .pieChart1 h2 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  /* Button Styles */
+  .edit-button, .save-button {
+    background-color: #ffcc00; /* Bright yellow background */
+    color: #fff; /* White text color */
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px; /* Font size for readability */
+    padding: 10px 20px; /* Padding for comfortable click area */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
+    margin: 10px; /* Space around buttons */
+  }
+  

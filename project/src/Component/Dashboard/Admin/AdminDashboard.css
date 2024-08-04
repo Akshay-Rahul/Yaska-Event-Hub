@@ -116,16 +116,14 @@
 
 /* Admin Dashboard Content */
 .admin-dashboard-content {
-  margin-left: 250px; /* Default margin */
-  width: calc(100% - 250px); /* Default width */
-  margin-top: 60px; /* Space for Navbar */
+  flex: 1; /* Take up remaining space */
+  margin-top: 10px; /* Space for Navbar */
+  margin-left:295px; /* Default margin */
+  width: calc(100% - 270px); /* Default width */
+  overflow-y: auto; /* Allow scrolling if content overflows */
   transition: margin-left 0.3s ease, width 0.3s ease, margin-top 0.3s ease;
 }
 
-.admin-dashboard-content.collapsed {
-  margin-left: 80px; /* Adjust margin when collapsed */
-  width: calc(100% - 80px); /* Adjust width when collapsed */
-}
 
 /* Admin Main Section */
 
@@ -155,3 +153,4 @@
   color: #333;
   border-radius: 4px;
 }
+

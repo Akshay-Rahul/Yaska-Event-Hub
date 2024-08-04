@@ -6,6 +6,7 @@
   font-family: 'Poppins', Arial, sans-serif;
   box-sizing: border-box;
   overflow-x: hidden;
+  background-color:lightgray;
 }
 
 /* Hero section styles */
@@ -15,10 +16,14 @@
   align-items: center;
   width: 100%;
   height: 100vh;
-  padding: 20px;
-  color:black;
+  color: black;
   position: relative;
+  background-image: url('./samback.avif'); /* Add your image path here */
+  background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
 }
+
 
 .hero-content {
   max-width: 50%;
