@@ -1,0 +1,207 @@
+/* General styling */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  color: #333;
+}
+
+.home-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 93vh;
+  width: 100%;
+  background-size: cover;
+  /* overflow: hidden; */
+  box-sizing: border-box;
+  text-align: center;
+  color:burlywood;
+}
+
+.home-content {
+  border-radius: 15px;
+  width: 100%;
+  max-width: 1450px;
+  margin: 20px;
+  height: calc(100% - 40px); /* Adjust height to fit within container */
+  overflow-y: auto; /* Enable vertical scrolling */
+  box-sizing: border-box;
+  color: #f1f1f1; /* Light text color for better contrast */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-header {
+  margin-bottom: 20px;
+}
+
+.home-header h1 {
+  font-size: 3em;
+  font-weight: bold;
+  margin: 0;
+  color: #e0e0e0; /* Light color for the heading */
+}
+
+.home-header p {
+  font-size: 1.5em;
+  margin-top: 10px;
+  color: #c0c0c0; /* Slightly darker than the heading but still light */
+  margin-bottom: 40px;
+}
+
+.home-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.home-image {
+  width: 300px; /* Fixed width */
+  height: 300px; /* Fixed height */
+  object-fit: cover; /* Ensure the image covers the specified dimensions */
+  border-radius: 10px;
+}
+
+.home-image-text {
+  max-width: 800px;
+  padding: 20px;
+  text-align: left;
+}
+
+.home-image-text p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #f1f1f1; /* Light text color for paragraphs */
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  margin-bottom: 50px;
+}
+
+.explore-button {
+  padding: 12px 25px;
+  font-size: 1.2em;
+  color: #fff;
+  background: linear-gradient(45deg, #004d7a, #00796b); /* Gradient background */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.explore-button:hover {
+  background: linear-gradient(45deg, #003366, #004d7a); /* Darker gradient on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.explore-button:active {
+  transform: translateY(1px); /* Slight press effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for pressed state */
+}
+
+.about-us-container, .our-services-container, .features-container {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.section-image {
+  width: 250px; /* Fixed width */
+  height: 250px; /* Fixed height */
+  object-fit: cover; /* Ensure the image covers the specified dimensions */
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.about-us-text, .our-services-text, .features-text {
+  max-width: 500px;
+  text-align: left;
+}
+
+.about-us-text h2, .our-services-text h2, .features-text h2 {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #e0e0e0; /* Light color for headings */
+}
+
+.about-us-text p, .our-services-text p, .features-text p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #f1f1f1; /* Light text color for paragraphs */
+}
+
+.testimonials {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.testimonials h2 {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #e0e0e0; /* Light color for headings */
+}
+
+.testimonials p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #f1f1f1; /* Light text color for paragraphs */
+}
+
+.testimonials-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line if necessary */
+  justify-content: center; /* Centers items horizontally */
+  gap: 20px; /* Space between testimonial items */
+}
+
+.testimonial-item {
+  flex: 1 1 300px; /* Flex-grow, flex-shrink, and flex-basis */
+  max-width: 300px; /* Fixed width */
+  background: rgba(0, 0, 0, 0.7); /* Slightly dark background for readability */
+  border-radius: 10px;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.testimonial-item blockquote {
+  font-style: italic;
+  color: #b0bec5; /* Lighter color for blockquotes */
+  margin: 0;
+}
+
+.contact-us {
+  text-align: center;
+}
+
+.contact-us h2 {
+  font-size: 2.2em;
+  font-weight: bold;
+  color: #e0e0e0; /* Light color for headings */
+}
+
+.contact-us p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #f1f1f1; /* Light text color for paragraphs */
+}
+
+.contact-us address {
+  font-style: normal;
+  line-height: 1.6;
+  color: #f1f1f1; /* Light text color for contact information */
+}

@@ -1,181 +1,122 @@
 import React, { useState } from 'react';
-import { AiOutlineClose } from 'react-icons/ai';
-import { MdChatBubble } from "react-icons/md";
-import { LuSendHorizonal } from "react-icons/lu";
+import ChatBot from 'react-simple-chatbot';
+import vijayAvatar from './vijay.jpg';
+
 const Chatbot = () => {
-    const [open, setOpen] = useState(false);
+  const [name, setName] = useState('');
 
-    const toggleChat = () => {
-        setOpen(!open);
-    };
+  const steps = [
+    {
+      id: '0',
+      message: 'Vanakam Nanba',
+      trigger: '1',
+    },
+    {
+      id: '1',
+      message: 'What is your name?',
+      trigger: 'get_name',
+    },
+    {
+      id: 'get_name',
+      user: true,
+      validator: (value) => {
+        if (!value || value.trim() === '') {
+          return 'Please enter a valid name.';
+        }
+        return true;
+      },
+      trigger: '3',
+    },
+    {
+      id: '3',
+      message: 'Hi {previousValue}, how can I assist you with your event today?',
+      trigger: 'event_inquiry',
+    },
+    {
+      id: 'event_inquiry',
+      options: [
+        { value: 'event_details', label: 'Event Details', trigger: 'event_details' },
+        { value: 'schedule', label: 'Schedule a New Event', trigger: 'schedule_event' },
+        { value: 'register', label: 'Event Registration', trigger: 'event_registration' },
+        { value: 'other', label: 'Other', trigger: 'other' },
+      ],
+    },
+    {
+      id: 'event_details',
+      message: 'I can help with event details. What do you want to know?',
+      trigger: 'details_options',
+    },
+    {
+      id: 'details_options',
+      options: [
+        { value: 'upcoming_events', label: 'Upcoming Events', trigger: 'upcoming_events' },
+        { value: 'past_events', label: 'Past Events', trigger: 'past_events' },
+        { value: 'event_venues', label: 'Event Venues', trigger: 'event_venues' },
+      ],
+    },
+    {
+      id: 'upcoming_events',
+      message: 'Here are the upcoming events: [list of events].',
+      trigger: 'end',
+    },
+    {
+      id: 'past_events',
+      message: 'Here are some past events: [list of events].',
+      trigger: 'end',
+    },
+    {
+      id: 'event_venues',
+      message: 'We have venues such as [list of venues].',
+      trigger: 'end',
+    },
+    {
+      id: 'schedule_event',
+      message: 'To schedule a new event, please provide the details such as date, time, and location.',
+      trigger: 'end',
+    },
+    {
+      id: 'event_registration',
+      message: 'For event registration, please provide your details and the event you want to register for.',
+      trigger: 'end',
+    },
+    {
+      id: 'other',
+      message: 'Can you please provide more details on how I can assist you?',
+      trigger: 'end',
+    },
+    {
+      id: 'end',
+      message: 'Thank you for reaching out! If you need more help, feel free to ask.',
+      end: true,
+    },
+  ];
 
-    return (
-        <div>
-            {!open && (
-                <div
-                    style={{
-                        position: 'fixed',
-                        bottom: '20px',
-                        right: '20px',
-                        backgroundColor: 'black',
-                        color: '#fff',
-                        borderRadius: '50%',
-                        width: '60px',
-                        height: '60px',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        cursor: 'pointer',
-                        fontSize: '24px',
-                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'
-                    }}
-                    onClick={toggleChat}
-                >
-                    <MdChatBubble />
-                </div>
-            )}
+  const config = {
+    botAvatar: vijayAvatar,
+    botAvatarStyle: {
+      borderRadius: '50%',
+      width: '60px',
+      height: '60px',
+    },
+    floating: true,
+  };
 
-            {open && (
-                <div
-                    style={{
-                        position: 'fixed',
-                        bottom: '20px',
-                        right: '20px',
-                        width: '320px',
-                        maxHeight: '400px',
-                        backgroundColor: '#fff',
-                        borderRadius: '8px',
-                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        overflow: 'hidden',
-                        fontFamily: 'Arial, Helvetica, sans-serif'
-                    }}
-                >
-                    <div
-                        style={{
-                            backgroundColor: 'black',
-                            color: 'white',
-                            padding: '10px',
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <span style={{ fontSize: '16px', fontWeight: 'bold' }}>Yaska Support</span>
-                        <AiOutlineClose
-                            style={{ cursor: 'pointer', fontSize: '20px' }}
-                            onClick={toggleChat}
-                        />
-                    </div>
-
-                    <div
-                        style={{
-                            flex: 1,
-                            padding: '10px',
-                            overflowY: 'auto',
-                            backgroundColor: '#f5f8fb'
-                        }}
-                    >
-                        {/* Admin message */}
-                        <div
-                            style={{
-                                display: 'flex',
-                                alignItems: 'flex-start',
-                                marginBottom: '10px'
-                            }}
-                        >
-                            <div>
-                                <div style={{ fontSize: '12px', marginBottom: '2px', color: 'black' }}>Admin</div>
-                                <div
-                                    style={{
-                                        backgroundColor: 'grey',
-                                        color: 'white',
-                                        padding: '10px',
-                                        borderRadius: '12px',
-                                        maxWidth: '80%',
-                                        wordWrap: 'break-word',
-                                        fontSize: '14px'
-                                    }}
-                                >
-                                    Hi! Do you need some help?
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* User message */}
-                        <div
-                            style={{
-                                display: 'flex',
-                                alignItems: 'flex-start',
-                                marginBottom: '10px',
-                                marginLeft: 'auto',
-                                justifyContent: 'flex-end',
-                            }}
-                        >
-                            <div>
-                                <div style={{ fontSize: '12px', marginBottom: '2px', textAlign: 'right', color: '#333' }}>User</div>
-                                <div
-                                    style={{
-                                        backgroundColor: 'lightblue',
-                                        color: 'white',
-                                        padding: '8px 16px',
-                                        borderRadius: '20px',
-                                        fontSize: '14px',
-                                        cursor: 'pointer',
-                                        textAlign: 'center',
-                                        width: 'fit-content',
-                                    }}
-                                >
-                                    Yes
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        style={{
-                            display: 'flex',
-                            borderTop: '1px solid #ccc',
-                            padding: '10px',
-                            backgroundColor: '#fff'
-                        }}
-                    >
-                        <input
-                            type="text"
-                            placeholder="Type the message ..."
-                            style={{
-                                flex: 1,
-                                padding: '10px',
-                                border: '1px solid #ccc',
-                                borderRadius: '20px',
-                                marginRight: '10px',
-                                outline: 'none'
-                            }}
-                        />
-                        <button
-                            style={{
-                                backgroundColor: '#6a1b9a',
-                                color: 'white',
-                                border: 'none',
-                                padding: '10px 20px',
-                                borderRadius: '20px',
-                                cursor: 'pointer',
-                                fontWeight: 'bold',
-                                textTransform: 'uppercase',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                fontSize: '20px'
-                            }}
-                        >
-                            <LuSendHorizonal /> {/* Replace text with icon */}
-                        </button>
-                    </div>
-                </div>
-            )}
-        </div>
-    );
+  return (
+    <div className="App">
+      <div className="chatbot-container">
+        <ChatBot
+          steps={steps}
+          botBubbleColor="#grey"
+          botFontColor="#white"
+          userBubbleColor="#grey"
+          userFontColor="#white"
+          botAvatar={vijayAvatar}
+          botAvatarStyle={config.botAvatarStyle}
+          {...config}
+        />
+      </div>
+    </div>
+  );
 };
 
 export default Chatbot;

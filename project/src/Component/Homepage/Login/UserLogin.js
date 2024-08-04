@@ -39,7 +39,7 @@ const UserLogin = () => {
           text: 'Login successful',
           timeout: 3000,
         }).show();
-        navigate('/user-dashboard');
+        navigate('/userdashboard');
       } else {
         new Noty({
           type: 'error',

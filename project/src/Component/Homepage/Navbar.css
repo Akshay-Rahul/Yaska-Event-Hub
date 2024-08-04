@@ -23,7 +23,6 @@
     position: absolute;
     left: 130px;
     font-weight: 600;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     letter-spacing: 1px;
     transition: color 0.3s ease, transform 0.3s ease;
 }

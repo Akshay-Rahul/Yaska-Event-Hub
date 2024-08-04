@@ -32,10 +32,10 @@ const getRatingStars = (rating) => {
   return (
     <>
       {[...Array(fullStars)].map((_, index) => (
-        <span key={`full-${index}`}>&#9733;</span> // Full star
+        <span key={`full-${index}`} className="full-star">&#9733;</span> // Full star
       ))}
       {[...Array(emptyStars)].map((_, index) => (
-        <span key={`empty-${index}`} className="empty">&#9733;</span> // Empty star
+        <span key={`empty-${index}`} className="empty-star">&#9733;</span> // Empty star
       ))}
     </>
   );
@@ -61,7 +61,7 @@ const Testimonials = () => {
               <div className={`avatar ${testimonial.avatarClass}`}></div>
               <blockquote>{testimonial.quote}</blockquote>
               <div className="card-footer2">
-                <div className="rating">
+                <div className="rating2">
                   {getRatingStars(testimonial.rating)}
                 </div>
                 <h3>{testimonial.name}</h3>

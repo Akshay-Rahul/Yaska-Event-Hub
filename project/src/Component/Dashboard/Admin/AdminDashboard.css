@@ -1,0 +1,157 @@
+/* Admin Dashboard Container */
+.admin-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Admin Navbar */
+.admin-navbar {
+  display: flex;
+  align-items: center;
+  background-color: #34495e;
+  color: #ecf0f1;
+  height: 100vh; /* Set a specific height */
+  padding: 0 1rem; /* Adjust padding to fit within the new height */
+  border-bottom: 1px solid #1abc9c;
+  z-index: 1000;
+}
+
+/* Admin Navbar Logo */
+.admin-navbar-logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 1rem;
+  transition: opacity 0.3s ease;
+}
+
+/* Admin Side Panel */
+.admin-side-panel-container {
+  width: 250px; /* Default width */
+  background-color: #000000;
+  color: #ecf0f1;
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+  z-index: 1000;
+}
+
+.admin-side-panel-container.collapsed {
+  width: 65px; /* Collapsed width */
+}
+
+/* Admin Side Panel Header */
+.admin-side-panel-header {
+  display: flex;
+  align-items: center;
+  padding: 1.1rem;
+  background-color: #000000;
+  color: #ecf0f1;
+  border-bottom: 1px solid #000000;
+}
+
+/* Admin Side Panel Collapse Button */
+.admin-side-panel-collapse-button {
+  background: none;
+  border: none;
+  color: #ecf0f1;
+  font-size: 22px; /* Default icon size */
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Smooth transition */
+}
+
+.admin-side-panel-collapse-button:hover,
+.admin-side-panel-collapse-button:focus {
+  color: #1abc9c;
+}
+
+.admin-side-panel-collapse-button:active {
+  transform: scale(0.95);
+}
+
+/* Collapse Button Size When Sidebar is Collapsed */
+.admin-side-panel-container.collapsed .admin-side-panel-collapse-button {
+  font-size: 24px; /* Slightly larger collapse icon size when collapsed */
+}
+
+/* Admin Side Panel Links */
+.admin-side-panel-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-side-panel-link {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: none;
+  border: none;
+  color: #ecf0f1;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.admin-side-panel-link.active,
+.admin-side-panel-link:hover {
+  background-color: darkgrey;
+  color: #fff;
+}
+
+.admin-side-panel-icon {
+  margin-right: 1rem;
+  font-size: 1.2rem; /* Default icon size */
+  transition: font-size 0.3s ease; /* Smooth transition for icon size change */
+}
+
+/* Icon Size When Sidebar is Collapsed */
+.admin-side-panel-container.collapsed .admin-side-panel-icon {
+  font-size: 1.4rem; /* Slightly larger icon size when collapsed */
+}
+
+/* Admin Dashboard Content */
+.admin-dashboard-content {
+  margin-left: 250px; /* Default margin */
+  width: calc(100% - 250px); /* Default width */
+  margin-top: 60px; /* Space for Navbar */
+  transition: margin-left 0.3s ease, width 0.3s ease, margin-top 0.3s ease;
+}
+
+.admin-dashboard-content.collapsed {
+  margin-left: 80px; /* Adjust margin when collapsed */
+  width: calc(100% - 80px); /* Adjust width when collapsed */
+}
+
+/* Admin Main Section */
+
+/* Transition Styles */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* Additional Styles for Admin Dashboard Content */
+.admin-content-panel {
+  padding: 2rem;
+  background: #ecf0f1;
+  color: #333;
+  border-radius: 4px;
+}

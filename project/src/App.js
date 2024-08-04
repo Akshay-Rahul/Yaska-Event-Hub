@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Chatbot from './Chat';
 import Homepage from './Component/Homepage/Home';
 import { AuthProvider } from './Component/Homepage/AuthContext';
 import UserLogin from './Component/Homepage/Login/UserLogin';
@@ -8,12 +7,13 @@ import UserRegister from './Component/Homepage/Login/UserRegister';
 import AdminLogin from './Component/Homepage/Login/AdminLogin';
 import AdminRegister from './Component/Homepage/Login/AdminRegister';
 import TeamMembers from './Component/Homepage/Login/TeamMembers';
+import AdminDashboard from './Component/Dashboard/Admin/AdminDashboard';
+import UserDashboard from './Component/Dashboard/User/UserDashboard';
 
 const App = () => {
   return (
     <AuthProvider>
     <Router>
-      <Chatbot/>
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/userlogin" element={<UserLogin />} />
@@ -21,6 +21,8 @@ const App = () => {
         <Route path="/adminlogin" element={<AdminLogin />} />
         <Route path="/adminregister" element={<AdminRegister />} />
         <Route path="/Team" element={<TeamMembers />} />
+        <Route path="/admindashboard" element={<AdminDashboard />} />
+        <Route path="/userdashboard" element={<UserDashboard />} />
       </Routes>
     </Router>
     </AuthProvider>
