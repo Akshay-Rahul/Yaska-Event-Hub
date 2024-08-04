@@ -31,11 +31,11 @@ const pieData1 = [
 ];
 
 const counters = [
-  { id: 1, name: 'Bimbimasli', count: '80M' },
-  { id: 2, name: 'Afgan_Syahreza', count: '40M' },
-  { id: 3, name: 'Ariel_Noah', count: '30M' },
-  { id: 4, name: 'DewiMedia', count: '10M' },
-  { id: 5, name: 'Dani_Listya', count: '5M' }
+  { id: 1, name: 'Akshay', role: 'Lead Organizer' },
+  { id: 2, name: 'Aditya', role: 'Co-Organizer' },
+  { id: 3, name: 'Deepak', role: 'Event Coordinator' },
+  { id: 4, name: 'Harish', role: 'Logistics Manager' },
+  { id: 5, name: 'Aswin', role: 'Marketing Lead' }
 ];
 
 // Geocode function to fetch country name from coordinates
@@ -164,11 +164,11 @@ const UserOverview = () => {
       </div>
       <div className="dashe">
         <div className="counterList1">
-          <h2>Top 5 Counters</h2>
+          <h2>Top 5 Organizers</h2>
           {counters.map((counter) => (
             <div className="counter1" key={counter.id}>
               <p>{counter.name}</p>
-              <span>{counter.count}</span>
+              <span>{counter.role}</span>
             </div>
           ))}
         </div>

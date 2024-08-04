@@ -48,7 +48,7 @@
   .user-side-panel-header {
     display: flex;
     align-items: center;
-    padding: 1.1rem;
+    padding: 1rem;
     background-color: #000000;
     color: #ecf0f1;
     border-bottom: 1px solid #000000;
@@ -59,7 +59,7 @@
     background: none;
     border: none;
     color: #ecf0f1;
-    font-size: 22px; /* Default icon size */
+    font-size: 16px; /* Default icon size */
     cursor: pointer;
     transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Smooth transition */
   }
@@ -88,7 +88,7 @@
   .user-side-panel-link {
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 0.9rem;
     background: none;
     border: none;
     color: #ecf0f1;
@@ -105,13 +105,13 @@
   
   .user-side-panel-icon {
     margin-right: 1rem;
-    font-size: 1.2rem; /* Default icon size */
+    font-size: 1rem; /* Default icon size */
     transition: font-size 0.3s ease; /* Smooth transition for icon size change */
   }
   
   /* Icon Size When Sidebar is Collapsed */
   .user-side-panel-container.collapsed .user-side-panel-icon {
-    font-size: 1.4rem; /* Slightly larger icon size when collapsed */
+    font-size: 1rem; /* Slightly larger icon size when collapsed */
   }
   
   /* user Dashboard Content */

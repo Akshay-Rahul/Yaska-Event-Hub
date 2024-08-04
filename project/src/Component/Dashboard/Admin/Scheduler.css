@@ -1,0 +1,103 @@
+.scheduler-container {
+  margin: 0 auto;
+  width: 80vw; /* Adjust width as needed */
+  height: 100vh;
+  border-radius: 10px;
+  padding-right: 30px; /* Add right padding */
+  margin-bottom: 40px; /* Add bottom margin for space */
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.5em;
+  color: #333;
+}
+
+.fc .fc-button {
+  background-color: #ffeb3b;
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.fc .fc-button:hover {
+  background-color: #fdd835;
+}
+
+.fc .fc-daygrid-event {
+  background-color: #ffc107;
+  border: none;
+  color: white;
+}
+
+/* Modal styling */
+.modal1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure modal is above other elements */
+}
+
+.modal1-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  max-width: 90%;
+  box-sizing: border-box;
+  margin: 0 auto; /* Ensure it is centered within the flex container */
+  text-align: center; /* Center align text */
+}
+
+.modal1-content h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.25em;
+}
+
+.modal1-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.modal1-content button {
+  background-color: #ffeb3b;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.modal1-content button:hover {
+  background-color: #fdd835;
+}
+
+.modal1-content .button-group {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+  margin-top: 20px; /* Add space above the button group */
+}
+
+.modal1-content .button-group button {
+  margin-left: 10px; /* Add space between buttons */
+}

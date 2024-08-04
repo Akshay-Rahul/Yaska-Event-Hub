@@ -5,6 +5,7 @@
   color: #000000; /* Black text color for better contrast */
   width: 80vw; /* Adjust width as needed */
   height: 100vh;
+  padding-right: 30px;
   box-sizing: border-box;
   overflow-x: hidden;
   padding-bottom: 30px; /* Reserve space for the fixed map */
@@ -137,8 +138,8 @@
 }
 /* Button Styles */
 .edit-button, .save-button {
-  background-color: #ffcc00; /* Bright yellow background */
-  color: #fff; /* White text color */
+  background-color: black; /* Bright yellow background */
+  color: #ffcc00; /* White text color */
   font-family: 'Poppins', sans-serif;
   font-size: 16px; /* Font size for readability */
   padding: 10px 20px; /* Padding for comfortable click area */
@@ -152,29 +153,10 @@
 
 .edit-button-container {
   display: flex;
-  justify-content: center; /* Center button horizontally */
+  justify-content: right; /* Center button horizontally */
   margin-top: 20px; /* Add some margin if needed */
 }
 
-.edit-button {
-  background-color: #f7e300; /* Bright yellow color */
-  color: white; /* White text color */
-  border: none;
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px 20px; /* Padding for button size */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s, transform 0.3s; /* Smooth transition effects */
-}
-
-.edit-button:hover {
-  background-color: #e6b800; /* Darker yellow on hover */
-  transform: translateY(-2px); /* Slight lift on hover */
-}
-
-.edit-button:active {
-  background-color: #cc9900; /* Even darker yellow on click */
-  transform: translateY(0); /* Reset lift on click */
-}
 
 /* Modal Styles */
 .modal-overlay {

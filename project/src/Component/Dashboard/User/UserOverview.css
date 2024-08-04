@@ -135,18 +135,3 @@
     color: #333;
     margin-bottom: 15px;
   }
-  /* Button Styles */
-  .edit-button, .save-button {
-    background-color: #ffcc00; /* Bright yellow background */
-    color: #fff; /* White text color */
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px; /* Font size for readability */
-    padding: 10px 20px; /* Padding for comfortable click area */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
-    margin: 10px; /* Space around buttons */
-  }
-  

@@ -4,12 +4,15 @@ import { CSSTransition } from 'react-transition-group';
 import {
   FaTachometerAlt, FaCalendarAlt, FaUsers, FaChartBar, FaBuilding, FaBell, FaCog, FaDollarSign, FaRegHandshake
 } from 'react-icons/fa';
+import { VscFeedback } from "react-icons/vsc";
+import { MdEventAvailable } from "react-icons/md";
 import './AdminDashboard.css'; // Ensure this path is correct
 
 import { useAuth } from '../../Homepage/AuthContext';
 import Navbar2 from './Navbar2';
 import AdminOverview from './AdminOverview';
 import Home from './Home';
+import Scheduler from './AdminScheduler';
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -51,22 +54,24 @@ const AdminDashboard = () => {
     switch (activeView) {
       case 'dashboard':
         return <AdminOverview />;
-      case 'event-management':
-        return <Home />;
-      case 'attendees':
-        return <Home />;
-      case 'reports':
-        return <Home />;
-      case 'venues':
-        return <Home />;
-      case 'settings':
-        return <Home />;
-      case 'payments':
-        return <Home />;
-      case 'sponsors':
-        return <Home />;
-      default:
-        return <Home />;
+        case 'event-management':
+          return <Home />;
+        case 'calendar':
+          return <Scheduler />;
+        case 'attendees':
+          return <Home />;
+        case 'reports':
+          return <Home />;
+        case 'venues':
+          return <Home />;
+        case 'payments':
+          return <Home />;
+        case 'sponsors':
+          return <Home />;
+        case 'feedback':
+          return <Home />;
+        default:
+          return <Home />;
     }
   };
 
@@ -81,14 +86,15 @@ const AdminDashboard = () => {
         </div>
         <ul className="admin-side-panel-links">
           {[
-            { key: 'dashboard', icon: <FaTachometerAlt />, text: 'Dashboard' },
-            { key: 'event-management', icon: <FaCalendarAlt />, text: 'Event Management' },
-            { key: 'attendees', icon: <FaUsers />, text: 'Attendees' },
-            { key: 'reports', icon: <FaChartBar />, text: 'Reports' },
-            { key: 'venues', icon: <FaBuilding />, text: 'Venues' },
-            { key: 'payments', icon: <FaDollarSign />, text: 'Payments' },
-            { key: 'sponsors', icon: <FaRegHandshake />, text: 'Sponsors' },
-            { key: 'settings', icon: <FaCog />, text: 'Settings' },
+             { key: 'dashboard', icon: <FaTachometerAlt />, text: 'Dashboard' },
+             { key: 'event-management', icon: <MdEventAvailable />, text: 'Event Management' },
+             { key: 'calendar', icon: <FaCalendarAlt />, text: 'Calendar' },
+             { key: 'attendees', icon: <FaUsers />, text: 'Attendees' },
+             { key: 'reports', icon: <FaChartBar />, text: 'Reports' },
+             { key: 'venues', icon: <FaBuilding />, text: 'Venues' },
+             { key: 'payments', icon: <FaDollarSign />, text: 'Payments' },
+             { key: 'sponsors', icon: <FaRegHandshake />, text: 'Sponsors' },
+             { key: 'feedback', icon: <VscFeedback />, text: 'Feedback' },
           ].map(({ key, icon, text }) => (
             <li key={key}>
               <button

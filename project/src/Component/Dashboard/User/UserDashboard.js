@@ -4,12 +4,16 @@ import { CSSTransition } from 'react-transition-group';
 import {
   FaTachometerAlt, FaCalendarAlt, FaUsers, FaChartBar, FaBuilding, FaBell, FaCog, FaDollarSign, FaRegHandshake
 } from 'react-icons/fa';
+import { VscFeedback } from "react-icons/vsc";
+import { MdEvent } from "react-icons/md";
+import { MdEventAvailable } from "react-icons/md";
 import './UserDashboard.css'; // Ensure this path is correct
 
 import { useAuth } from '../../Homepage/AuthContext';
 import Navbar2 from './Navbar2';
 import Home from '../Admin/Home';
 import UserOverview from './UserOverview';
+import UserScheduler from './UserScheduler';
 
 const UserDashboard = () => {
   const navigate = useNavigate();
@@ -51,19 +55,23 @@ const UserDashboard = () => {
     switch (activeView) {
       case 'dashboard':
         return <UserOverview />;
-      case 'event-management':
+      case 'events':
         return <Home />;
+      case 'myevents':
+        return <Home />;
+      case 'calendar':
+        return <UserScheduler />;
       case 'attendees':
         return <Home />;
       case 'reports':
         return <Home />;
       case 'venues':
         return <Home />;
-      case 'settings':
-        return <Home />;
       case 'payments':
         return <Home />;
       case 'sponsors':
+        return <Home />;
+      case 'feedback':
         return <Home />;
       default:
         return <Home />;
@@ -82,13 +90,16 @@ const UserDashboard = () => {
         <ul className="user-side-panel-links">
           {[
             { key: 'dashboard', icon: <FaTachometerAlt />, text: 'Dashboard' },
-            { key: 'event-management', icon: <FaCalendarAlt />, text: 'Event Management' },
+            { key: 'events', icon: <MdEvent />, text: 'Events' },
+            { key: 'myevents', icon: <MdEventAvailable />, text: 'My Events' },
+            { key: 'calendar', icon: <FaCalendarAlt />, text: 'Calendar' },
             { key: 'attendees', icon: <FaUsers />, text: 'Attendees' },
             { key: 'reports', icon: <FaChartBar />, text: 'Reports' },
             { key: 'venues', icon: <FaBuilding />, text: 'Venues' },
             { key: 'payments', icon: <FaDollarSign />, text: 'Payments' },
             { key: 'sponsors', icon: <FaRegHandshake />, text: 'Sponsors' },
-            { key: 'settings', icon: <FaCog />, text: 'Settings' },
+            { key: 'feedback', icon: <VscFeedback />, text: 'Feedback' },
+      
           ].map(({ key, icon, text }) => (
             <li key={key}>
               <button
