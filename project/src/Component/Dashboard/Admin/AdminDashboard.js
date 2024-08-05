@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import {
-  FaTachometerAlt, FaCalendarAlt, FaUsers, FaChartBar, FaBuilding, FaBell, FaCog, FaDollarSign, FaRegHandshake
+  FaTachometerAlt, FaCalendarAlt, FaUsers, FaChartBar, FaBuilding, FaDollarSign, FaRegHandshake
 } from 'react-icons/fa';
 import { VscFeedback } from "react-icons/vsc";
+import { MdEvent } from "react-icons/md";
 import { MdEventAvailable } from "react-icons/md";
 import './AdminDashboard.css'; // Ensure this path is correct
 
@@ -13,6 +14,8 @@ import Navbar2 from './Navbar2';
 import AdminOverview from './AdminOverview';
 import Home from './Home';
 import Scheduler from './AdminScheduler';
+import EventManagement from './EventManagement';
+import EventList from './EventList';
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -55,7 +58,9 @@ const AdminDashboard = () => {
       case 'dashboard':
         return <AdminOverview />;
         case 'event-management':
-          return <Home />;
+          return <EventManagement />;
+        case 'events':
+          return <EventList />;
         case 'calendar':
           return <Scheduler />;
         case 'attendees':
@@ -88,6 +93,7 @@ const AdminDashboard = () => {
           {[
              { key: 'dashboard', icon: <FaTachometerAlt />, text: 'Dashboard' },
              { key: 'event-management', icon: <MdEventAvailable />, text: 'Event Management' },
+             { key: 'events', icon: <MdEvent />, text: 'Events' },
              { key: 'calendar', icon: <FaCalendarAlt />, text: 'Calendar' },
              { key: 'attendees', icon: <FaUsers />, text: 'Attendees' },
              { key: 'reports', icon: <FaChartBar />, text: 'Reports' },

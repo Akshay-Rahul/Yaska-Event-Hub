@@ -1,0 +1,130 @@
+/* Event Management Styles */
+.event-management-page {
+
+  font-family: 'Arial', sans-serif;
+  background: url('https://source.unsplash.com/1600x900/?events') no-repeat center center; /* Background image */
+  background-size: cover;
+  color: #fff; /* Light text for better contrast on dark background */
+  margin-right: 40px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color:black; /* Light color for the header */
+  margin: 0;
+}
+
+.image-gallery-container {
+  margin-bottom: 30px;
+}
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 20px;
+}
+
+.image-item {
+  border-radius: 15px; /* Rounded corners for a softer look */
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.image-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  filter: brightness(0.8); /* Darken image slightly on hover */
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-text {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1rem; /* Slightly larger font */
+  font-weight: bold; /* Bold text for emphasis */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for text box */
+}
+
+.booking-form {
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  border-radius: 10px; /* Rounded corners */
+  padding: 30px; /* Increased padding for better spacing */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  max-width: 700px; /* Increased form width */
+  margin: 0 auto; /* Center align the form */
+  backdrop-filter: blur(10px); /* Blur effect on background */
+}
+
+.booking-form h2 {
+  margin-bottom: 20px;
+  color: #333; /* Darker color for the heading */
+}
+
+.booking-form form div {
+  margin-bottom: 20px; /* Increased margin between form fields */
+}
+
+.booking-form label {
+  display: block;
+  margin-bottom: 8px; /* Increased margin for labels */
+  font-weight: bold;
+  color: #333; /* Darker color for labels */
+}
+
+.booking-form input,
+.booking-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.booking-form input[type="date"],
+.booking-form input[type="time"] {
+  padding: 10px; /* Adjust padding for date/time inputs */
+}
+
+.booking-form button {
+  background-color: #3498db; /* Blue button for primary action */
+  color: #fff;
+  border: none;
+  padding: 12px 24px; /* Larger padding for a more prominent button */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-right: 10px; /* Margin between buttons */
+}
+
+.booking-form button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: scale(1.02); /* Slightly enlarge button on hover */
+}
+
+.booking-form button:last-child {
+  background-color: #e74c3c; /* Red button for secondary action */
+}
+
+.booking-form button:last-child:hover {
+  background-color: #c0392b; /* Darker red on hover */
+}
