@@ -14,6 +14,8 @@ import Navbar2 from './Navbar2';
 import Home from '../Admin/Home';
 import UserOverview from './UserOverview';
 import UserScheduler from './UserScheduler';
+import EventPage from './Events';
+import MyEvents from './AvailEvents';
 
 const UserDashboard = () => {
   const navigate = useNavigate();
@@ -56,9 +58,9 @@ const UserDashboard = () => {
       case 'dashboard':
         return <UserOverview />;
       case 'events':
-        return <Home />;
-      case 'myevents':
-        return <Home />;
+        return <MyEvents />;
+        case 'myevents':
+        return <EventPage />;
       case 'calendar':
         return <UserScheduler />;
       case 'attendees':
@@ -66,8 +68,6 @@ const UserDashboard = () => {
       case 'reports':
         return <Home />;
       case 'venues':
-        return <Home />;
-      case 'payments':
         return <Home />;
       case 'sponsors':
         return <Home />;
@@ -96,7 +96,6 @@ const UserDashboard = () => {
             { key: 'attendees', icon: <FaUsers />, text: 'Attendees' },
             { key: 'reports', icon: <FaChartBar />, text: 'Reports' },
             { key: 'venues', icon: <FaBuilding />, text: 'Venues' },
-            { key: 'payments', icon: <FaDollarSign />, text: 'Payments' },
             { key: 'sponsors', icon: <FaRegHandshake />, text: 'Sponsors' },
             { key: 'feedback', icon: <VscFeedback />, text: 'Feedback' },
       

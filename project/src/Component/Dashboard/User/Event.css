@@ -1,0 +1,50 @@
+/* Event.css */
+
+/* Container for the entire event page */
+.event-page {
+        display: flex;
+        flex-direction: column;
+        width: 84vw; /* Set width to 75% of the viewport width */
+        height: 100vh; /* Full viewport height */
+        background-color: #f4f4f4;
+        margin: 0 auto; /* Center the page horizontally */
+        margin-right: 30px;
+}
+
+.event-image {
+  width: 54vh;
+  height: 300px; /* Fixed height for a rectangular shape */
+  object-fit: cover;
+}
+.event-summary img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container for event details */
+.event-details {
+  padding: 15px;
+}
+
+.event-details h3 {
+  font-size: 1.5em;
+  margin-top: 0;
+  color: #333;
+  text-align: center;
+}
+
+.event-details p {
+  margin: 10px 0;
+  color: #555;
+}
+
+.event-details strong {
+  color: #222;
+}
+
+/* Message when no events are joined */
+.event-page p {
+  text-align: center;
+  color: #777;
+  font-size: 1.2em;
+}

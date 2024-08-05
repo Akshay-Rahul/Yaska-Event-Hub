@@ -9,6 +9,7 @@ import AdminRegister from './Component/Homepage/Login/AdminRegister';
 import TeamMembers from './Component/Homepage/Login/TeamMembers';
 import AdminDashboard from './Component/Dashboard/Admin/AdminDashboard';
 import UserDashboard from './Component/Dashboard/User/UserDashboard';
+import Tickets from './Component/Dashboard/User/Payment';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/Team" element={<TeamMembers />} />
         <Route path="/admindashboard" element={<AdminDashboard />} />
         <Route path="/userdashboard" element={<UserDashboard />} />
+        <Route path="/tickets" element={<Tickets/>} />
       </Routes>
     </Router>
     </AuthProvider>
