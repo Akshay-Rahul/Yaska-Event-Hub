@@ -48,7 +48,7 @@
 .admin-side-panel-header {
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 1.1rem;
   background-color: #000000;
   color: #ecf0f1;
   border-bottom: 1px solid #000000;
@@ -59,7 +59,7 @@
   background: none;
   border: none;
   color: #ecf0f1;
-  font-size: 22px; /* Default icon size */
+  font-size: 20px; /* Default icon size */
   cursor: pointer;
   transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Smooth transition */
 }
@@ -75,7 +75,7 @@
 
 /* Collapse Button Size When Sidebar is Collapsed */
 .admin-side-panel-container.collapsed .admin-side-panel-collapse-button {
-  font-size: 24px; /* Slightly larger collapse icon size when collapsed */
+  font-size: 21px; /* Slightly larger collapse icon size when collapsed */
 }
 
 /* Admin Side Panel Links */
@@ -105,7 +105,7 @@
 
 .admin-side-panel-icon {
   margin-right: 1rem;
-  font-size: 1rem; /* Default icon size */
+  font-size: 1.1rem; /* Default icon size */
   transition: font-size 0.3s ease; /* Smooth transition for icon size change */
 }
 

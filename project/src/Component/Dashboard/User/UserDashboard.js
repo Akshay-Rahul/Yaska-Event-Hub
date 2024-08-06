@@ -16,6 +16,8 @@ import UserOverview from './UserOverview';
 import UserScheduler from './UserScheduler';
 import EventPage from './Events';
 import MyEvents from './AvailEvents';
+import Reports from './Reports';
+import FeedbackForm from './FeedbackForm';
 
 const UserDashboard = () => {
   const navigate = useNavigate();
@@ -66,13 +68,13 @@ const UserDashboard = () => {
       case 'attendees':
         return <Home />;
       case 'reports':
-        return <Home />;
+        return <Reports />;
       case 'venues':
         return <Home />;
       case 'sponsors':
         return <Home />;
       case 'feedback':
-        return <Home />;
+        return <FeedbackForm />;
       default:
         return <Home />;
     }

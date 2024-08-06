@@ -13,7 +13,7 @@
     background-color: #34495e;
     color: #ecf0f1;
     height: 100vh; /* Set a specific height */
-    padding: 0 1rem; /* Adjust padding to fit within the new height */
+    padding: 1rem; /* Adjust padding to fit within the new height */
     border-bottom: 1px solid #1abc9c;
     z-index: 1000;
   }
@@ -48,7 +48,7 @@
   .user-side-panel-header {
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 1.2rem;
     background-color: #000000;
     color: #ecf0f1;
     border-bottom: 1px solid #000000;
@@ -59,7 +59,7 @@
     background: none;
     border: none;
     color: #ecf0f1;
-    font-size: 16px; /* Default icon size */
+    font-size: 25px; /* Default icon size */
     cursor: pointer;
     transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Smooth transition */
   }
@@ -88,7 +88,7 @@
   .user-side-panel-link {
     display: flex;
     align-items: center;
-    padding: 0.9rem;
+    padding: 1.2rem;
     background: none;
     border: none;
     color: #ecf0f1;
@@ -105,7 +105,7 @@
   
   .user-side-panel-icon {
     margin-right: 1rem;
-    font-size: 1rem; /* Default icon size */
+    font-size: 1.1rem; /* Default icon size */
     transition: font-size 0.3s ease; /* Smooth transition for icon size change */
   }
   
