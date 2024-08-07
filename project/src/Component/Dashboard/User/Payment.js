@@ -6,6 +6,19 @@ import 'noty/lib/themes/mint.css';
 import './Payment.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 
+const Modal = ({ isOpen, onClose, children }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        <button className="modal-close" onClick={onClose}>×</button>
+        {children}
+      </div>
+    </div>
+  );
+};
+
 const Tickets = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -18,6 +31,9 @@ const Tickets = () => {
     expiryDate: '',
     cvv: '',
   });
+
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [isOrderSummaryOpen, setOrderSummaryOpen] = useState(false);
 
   const handleChange = (e) => {
     setPaymentDetails({
@@ -66,13 +82,12 @@ const Tickets = () => {
     }
   };
 
+  const handleOpenOrderSummary = () => {
+    setOrderSummaryOpen(true);
+  };
+
   return (
     <div className="payment-page">
-      <header className="header">
-        <div className="logo">Yaska</div>
-        {/* Navigation links can be added here */}
-      </header>
-
       <div className="container">
         <div className="payment-details">
           <h2>Event Details</h2>
@@ -128,16 +143,21 @@ const Tickets = () => {
                 required
               />
             </label>
-            <button type="submit" className="submit-button">Pay Now</button>
+            <button type="button" className="submit-button" onClick={handleOpenOrderSummary}>
+              View Order Summary
+            </button>
           </form>
         </div>
 
-        <aside className="order-summary">
-          <h3>Order Summary</h3>
-          <p>Event Ticket: $100</p>
-          <p>Tax: $5</p>
-          <p>Total: $105</p>
-        </aside>
+        <Modal isOpen={isOrderSummaryOpen} onClose={() => setOrderSummaryOpen(false)}>
+          <div className="order-summary">
+            <h3>Order Summary</h3>
+            <p>Event Ticket: $100</p>
+            <p>Tax: $5</p>
+            <p>Total: $105</p>
+            <button className="submit-button" onClick={handleJoin}>Confirm and Pay</button>
+          </div>
+        </Modal>
       </div>
     </div>
   );

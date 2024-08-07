@@ -47,7 +47,7 @@ const ReportTable = ({ data }) => {
 };
 
 // Chart component with static data
-const ReportChart = ({ data }) => {
+const ReportChart = () => {
   const staticData = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     values: [65, 59, 80, 81, 56, 55, 40],
@@ -79,9 +79,9 @@ const ExportButton = ({ data }) => (
 const fetchReportData = async (type, filters) => {
   // Return mock data for testing
   return [
-    { event: 'Event 1', participants: 120, revenue: 5000, satisfaction: 4.5 },
-    { event: 'Event 2', participants: 95, revenue: 3000, satisfaction: 4.2 },
-    { event: 'Event 3', participants: 150, revenue: 7000, satisfaction: 4.8 },
+    { Event: 'Event 1', Participants: 120, Revenue: 5000, Satisfaction: 4.5 },
+    { Event: 'Event 2', Participants: 95, Revenue: 3000, Satisfaction: 4.2 },
+    { Event: 'Event 3', Participants: 150, Revenue: 7000, Satisfaction: 4.8 },
   ];
 };
 
@@ -92,6 +92,10 @@ const ReportFilters = ({ onChange }) => {
     onChange({}); // Update with real filters as needed
   };
 
+  return (
+    <div className="report-filters">
+    </div>
+  );
 };
 
 // Main Reports component
@@ -113,36 +117,31 @@ const Reports = () => {
   }, [filters]);
 
   // Calculate summary statistics
-  const totalParticipants = reportData.reduce((total, event) => total + event.participants, 0);
-  const totalRevenue = reportData.reduce((total, event) => total + event.revenue, 0);
-  const averageSatisfaction = (reportData.reduce((total, event) => total + event.satisfaction, 0) / reportData.length).toFixed(2);
-
-  const handleCustomReport = () => {
-    // Logic for generating custom reports
-    console.log('Generating custom report...');
-  };
-
-  const handleDownloadReport = () => {
-    // Logic for downloading reports
-    console.log('Downloading report...');
-  };
+  const totalParticipants = reportData.reduce((total, event) => total + (Number(event.Participants) || 0), 0);
+  const totalRevenue = reportData.reduce((total, event) => total + (Number(event.Revenue) || 0), 0);
+  const averageSatisfaction = (reportData.length > 0
+    ? (reportData.reduce((total, event) => total + (Number(event.Satisfaction) || 0), 0) / reportData.length)
+    : 0).toFixed(2);
 
   return (
     <div className="reports-widget">
-      <h2 className="header">Reports</h2>
+      <h2 className="header21">Reports</h2>
       <p>Generate and view reports and analytics for corporate events.</p>
 
-      <div className="summary">
+      <div className="summary1">
+        <ReportChart />
+      </div>
+  
+      <ReportFilters onChange={setFilters} />
+  
+      <div>
+        <ReportTable data={reportData} />
         <h3>Summary</h3>
         <p><strong>Total Participants:</strong> {totalParticipants}</p>
         <p><strong>Total Revenue:</strong> ${totalRevenue}</p>
         <p><strong>Average Satisfaction:</strong> {averageSatisfaction} / 5</p>
+        <ExportButton data={reportData} />
       </div>
-
-      <ReportFilters onChange={setFilters} />
-      <ReportTable data={reportData} />
-      <ReportChart data={reportData} />
-      <ExportButton data={reportData} />
     </div>
   );
 };

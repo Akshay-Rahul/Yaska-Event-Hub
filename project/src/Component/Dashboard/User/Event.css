@@ -1,54 +1,104 @@
-/* Event.css */
-
 /* Container for the entire event page */
-.event-page {
-  background-size: cover;
+.event-page04 {
+  padding: 20px;
+  text-align: center;
   font-family: 'Poppins', sans-serif;
-  color: #000000; /* Black text color for better contrast */
+  color: #000; /* Black text color for better contrast */
   width: 80vw; /* Adjust width as needed */
   height: 100vh;
   box-sizing: border-box;
   overflow-x: hidden;
-  padding-bottom: 30px; /* Reserve space for the fixed map */
   position: relative; /* Ensure the map can be positioned fixed */
-  text-align: center; /* Center-align all text within this container */
 }
 
+/* Header for the events section */
+.event-page04 h2 {
+  color: #000;
+  margin-bottom: 30px;
+}
 
-.event-image {
-  width: 54vh;
-  height: 300px; /* Fixed height for a rectangular shape */
+/* Container for event items */
+.event-list04 {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the cards horizontally */
+  gap: 20px;
+}
+
+/* Card for individual events */
+.event-item04 {
+  width: 800px;
+  max-width: 100%; /* Ensure it doesn't overflow on small screens */
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  overflow: hidden;
+  transition: border 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-items: center; /* Center content vertically */
+  gap: 15px;
+}
+
+.event-item04:hover {
+  border-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Event image */
+.event-image04 {
+  width: 320px;
+  height: 260px;
   object-fit: cover;
-}
-.event-summary img {
-  max-width: 100%;
-  height: auto;
+  border-radius: 8px;
 }
 
 /* Container for event details */
-.event-details {
+.event-details04 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center text vertically */
+  align-items: center; /* Center text horizontally */
+  text-align: center; /* Align text to the center */
   padding: 15px;
 }
 
-.event-details h3 {
-  font-size: 1.5em;
+/* Event details header */
+.event-details04 h3 {
+  font-size: 1.6em;
   margin-top: 0;
   color: #333;
-  text-align: center;
 }
 
-.event-details p {
+/* Event details paragraphs */
+.event-details04 p {
   margin: 10px 0;
   color: #555;
 }
 
-.event-details strong {
+.event-details04 strong {
   color: #222;
 }
 
 /* Message when no events are joined */
-.event-page p {
+.event-page04 p {
   text-align: center;
   color: #777;
   font-size: 1.2em;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .event-item04 {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-item04 {
+    flex-direction: column;
+    width: 100%; /* Use full width for smaller screens */
+  }
 }

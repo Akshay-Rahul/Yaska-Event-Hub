@@ -18,7 +18,7 @@
   height: 100vh;
   color: black;
   position: relative;
-  background-image: url('./samback.avif'); /* Add your image path here */
+  background-image: url('./samback.jpg'); /* Add your image path here */
   background-size: cover; /* Cover the entire container */
   background-position: center; /* Center the background image */
   background-repeat: no-repeat; /* Prevent repeating the image */

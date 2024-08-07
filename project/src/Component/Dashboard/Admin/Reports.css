@@ -1,99 +1,102 @@
 .reports-widget {
-  background-size: cover;
   font-family: 'Poppins', sans-serif;
   color: #000000; /* Black text color for better contrast */
   width: 80vw; /* Adjust width as needed */
-  height: 100vh;
+  min-height: 100vh; /* Ensure full height */
   box-sizing: border-box;
   overflow-x: hidden;
-  padding-bottom: 30px; /* Reserve space for the fixed map */
-  position: relative; /* Ensure the map can be positioned fixed */
-  text-align: center; /* Center-align all text within this container */
+  padding: 20px; /* Consistent padding */
+  text-align: center; /* Center-align text */
 }
 
-  
-  .header {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 28px;
-  }
-  
-  .summary {
-    margin-bottom: 20px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
-    border: 1px solid #ddd; /* Subtle border for definition */
-  }
-  
-  .summary h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-  
-  .summary p {
-    font-size: 16px;
-    margin: 5px 0;
-    color: #666;
-  }
-  
-  .reports-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for depth */
-    border: 1px solid #ddd; /* Subtle border for definition */
-    margin-bottom: 20px;
-  }
-  
-  .reports-table th, .reports-table td {
-    padding: 15px; /* Increased padding for better readability */
-    border: 1px solid #ddd;
-    text-align: left;
-    font-size: 16px; /* Slightly larger font size */
-  }
-  
-  .reports-table th {
-    background-color: #007bff; /* Accent color for header */
-    color: #fff; /* White text color */
-    font-weight: bold;
-  }
-  
-  .reports-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  .reports-table tbody tr:hover {
-    background-color: #e9ecef; /* Highlight row on hover */
-  }
-  
-  .btn-group {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 15px; /* Increased gap between buttons */
-  }
-  
-  .btn {
-    padding: 12px 24px; /* Larger padding for a more prominent button */
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Added transition for button effects */
-  }
-  
-  .btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.05); /* Slightly enlarge button on hover */
-  }
-  
-  .btn:focus {
-    outline: none; /* Remove default outline */
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); /* Add custom focus ring */
-  }
-  
+.header21 {
+  color:black; /* Bright yellow for header */
+  margin-bottom: 30px; /* Spacing below header */
+  font-size: 2.5rem; /* Larger font size for the header */
+  font-weight: bold; /* Bold header */
+  text-transform: uppercase; /* Uppercase header text */
+}
+
+.summary1, .summary2 {
+  margin-bottom: 30px; /* Spacing between sections */
+  background: #ffffff; /* White background for sections */
+  padding: 20px; /* Padding inside sections */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid #ddd; /* Subtle border */
+}
+
+.summary1 {
+  margin-bottom: 20px; /* Additional spacing for the chart section */
+}
+
+.summary1 h3, .summary2 h3 {
+  font-size: 1.75rem; /* Larger font size for section titles */
+  margin-bottom: 20px; /* Spacing below section titles */
+  color: #FFD700; /* Yellow color for section titles */
+}
+
+.summary1 p, .summary2 p {
+  font-size: 1.1rem; /* Slightly larger font size */
+  margin: 10px 0; /* Spacing around paragraphs */
+  color: #666; /* Lighter text color */
+}
+
+.reports-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff; /* White background for table */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid #ddd;
+  margin-bottom: 30px; /* Spacing below the table */
+}
+
+.reports-table th, .reports-table td {
+  padding: 15px; /* Consistent padding for table cells */
+  border: 1px solid #ddd;
+  text-align: left;
+  font-size: 1.1rem; /* Slightly larger font size */
+}
+
+.reports-table th {
+  background-color: #FFD700; /* Yellow background for table headers */
+  color: #000000; /* Black text color for headers */
+  font-weight: bold;
+}
+
+.reports-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternating row colors */
+}
+
+.reports-table tbody tr:hover {
+  background-color: #e9ecef; /* Highlight row on hover */
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px; /* Spacing above button group */
+  gap: 20px; /* Space between buttons */
+}
+
+.btn {
+  padding: 12px 24px; /* Padding for buttons */
+  font-size: 1.1rem; /* Font size for buttons */
+  border: none;
+  border-radius: 6px; /* Rounded corners */
+  background-color: #FFD700; /* Bright yellow for buttons */
+  color: #000000; /* Black text color */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.btn:hover {
+  background-color: #FFC107; /* Slightly darker yellow on hover */
+  transform: scale(1.05); /* Slightly enlarge button on hover */
+}
+
+.btn:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.5); /* Custom focus ring */
+}

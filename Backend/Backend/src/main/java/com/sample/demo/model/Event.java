@@ -18,7 +18,6 @@ public class Event {
     private String img;
     private String startTime;
     private String endTime;
-    private String category;
     private String organizerName;
 
     // Getters and setters
@@ -86,15 +85,6 @@ public class Event {
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
     public String getOrganizerName() {
         return organizerName;
     }

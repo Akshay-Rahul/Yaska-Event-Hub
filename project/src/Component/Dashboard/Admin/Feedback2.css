@@ -1,0 +1,65 @@
+.feed1-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.feed1-title {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.feed1-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.feed1-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  flex-basis: calc(50% - 8px); /* 50% width minus gap */
+  margin-bottom: 16px;
+}
+
+.feed1-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feed1-avatar {
+  background-color: #1976d2;
+  color: #fff;
+}
+
+.feed1-name {
+  font-weight: bold;
+}
+
+.feed1-email {
+  color: #666;
+}
+
+.feed1-feedback {
+  margin-top: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.feed1-location {
+  margin-top: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.feed1-rating {
+  margin-top: 0.5rem;
+}

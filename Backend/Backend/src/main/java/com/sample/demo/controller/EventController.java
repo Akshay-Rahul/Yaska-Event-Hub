@@ -45,7 +45,6 @@ public class EventController {
             existingEvent.setImg(eventDetails.getImg());
             existingEvent.setStartTime(eventDetails.getStartTime());
             existingEvent.setEndTime(eventDetails.getEndTime());
-            existingEvent.setCategory(eventDetails.getCategory());
             existingEvent.setOrganizerName(eventDetails.getOrganizerName());
 
             Event updatedEvent = eventService.createOrUpdateEvent(existingEvent);

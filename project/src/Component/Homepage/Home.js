@@ -12,7 +12,7 @@ import Navbar from './Navbar';
 import Contact from './Contact';
 import Testimonials from './Test';
 import Service from './Service';
-import homeImage from './sam2.png'
+import homeImage from './sam2.png';
 import Chatbot from '../../Chat';
 
 const Homepage = () => {
@@ -37,21 +37,23 @@ const Homepage = () => {
 
   return (
     <div className="full-page-container">
-      <Chatbot/>
+      <Chatbot />
       <Navbar transparent />
       <div className="hero-container">
         <div className="hero-content">
-          <h1>Welcome to Your Corporate Event Hub</h1>
+          <h1>WELCOME TO YOUR CORPORATE EVENT HUB</h1>
           <p>Organize and manage your corporate events effortlessly. Sign up today and streamline your event planning.</p>
-          <button className="get-started-button" onClick={handleGetStartedClick}>Get Started</button>
+          <button className="get-started-button" onClick={handleGetStartedClick}>
+            Get Started
+          </button>
         </div>
         <img src={homeImage} alt="About Us" className="section-image2" />
       </div>
-      <About/>
-      <Service/>
+      <About />
+      <Service />
       <Testimonials />
       <SignIn />
-      <Contact/>
+      <Contact />
 
       <footer className="footer">
         <div className="footer-links">
@@ -84,18 +86,18 @@ const Homepage = () => {
           </div>
         </div>
         <div className="footer-bottom">
-          <div>
+          <div className="footer-icons">
             <a href="https://www.facebook.com">
-              <FaFacebook size={24} style={{ margin: '0 10px', color: '#fff' }} />
+              <FaFacebook size={24} />
             </a>
             <a href="https://www.instagram.com">
-              <FaInstagram size={24} style={{ margin: '0 10px', color: '#fff' }} />
+              <FaInstagram size={24} />
             </a>
             <a href="https://www.twitter.com">
-              <FaTwitter size={24} style={{ margin: '0 10px', color: '#fff' }} />
+              <FaTwitter size={24} />
             </a>
             <a href="https://www.linkedin.com">
-              <FaLinkedin size={24} style={{ margin: '0 10px', color: '#fff' }} />
+              <FaLinkedin size={24} />
             </a>
           </div>
           <p>&copy; 2024 Yaska. All rights reserved.</p>

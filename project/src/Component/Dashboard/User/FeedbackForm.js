@@ -4,9 +4,12 @@ import Noty from 'noty';
 import 'noty/lib/noty.css';
 import 'noty/lib/themes/mint.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faSmile } from '@fortawesome/free-solid-svg-icons';
 
 const FeedbackForm = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [location, setLocation] = useState('');
   const [feedback, setFeedback] = useState('');
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
@@ -19,14 +22,17 @@ const FeedbackForm = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ feedback, rating }),
+        body: JSON.stringify({ name, email, location, feedback, rating }),
       });
       new Noty({
         type: 'success',
         layout: 'topRight',
-        text: ' Thank you for your feedback!',
+        text: 'Thank you for your feedback!',
         timeout: 3000,
       }).show();
+      setName('');
+      setEmail('');
+      setLocation('');
       setFeedback('');
       setRating(0);
     } catch (error) {
@@ -53,8 +59,44 @@ const FeedbackForm = () => {
 
   return (
     <div className="feedback-form-container">
-      <h2 className="feedback-form-title"> We Value Your Feedback! </h2>
+      <h2 className="feedback-form-title">We Value Your Feedback!</h2>
       <form onSubmit={handleSubmit} className="feedback-form">
+        <div className="form-group">
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="form-control"
+            placeholder="Your Name"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="form-control"
+            placeholder="Your Email"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="location">Location:</label>
+          <input
+            type="text"
+            id="location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            className="form-control"
+            placeholder="Your Location"
+            required
+          />
+        </div>
         <div className="form-group">
           <label htmlFor="rating">Rating:</label>
           <div className="star-rating">
@@ -81,9 +123,13 @@ const FeedbackForm = () => {
             className="form-control"
             placeholder="Share your thoughts here..."
             rows="5"
+            required
           />
         </div>
-        <button type="submit" className="btn-submit">Submit Feedback </button>
+        <button type="submit" className="btn-submit">
+          <FontAwesomeIcon icon={faSmile} className="emoji-icon" />
+              Submit
+        </button>
       </form>
     </div>
   );

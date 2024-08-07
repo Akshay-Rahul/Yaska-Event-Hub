@@ -1,0 +1,77 @@
+.venues-page {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .venue-h1 {
+    color: #000;
+    margin-bottom: 30px;
+  }
+  
+  .venues-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the cards horizontally */
+    gap: 20px;
+  }
+  
+  .venue-card {
+    width: 800px;
+    max-width: 100%; /* Ensure it doesn't overflow on small screens */
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    overflow: hidden;
+    transition: border 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center; /* Center content vertically */
+    gap: 15px;
+  }
+  
+  .venue-card:hover {
+    border-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+  
+  .venue-image {
+    width: 300px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .venue-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center text vertically */
+    align-items: center; /* Center text horizontally */
+    text-align: center; /* Align text to the center */
+  }
+  
+  .venue-name {
+    font-size: 1.6em;
+    margin: 10px 0;
+    color: #000;
+  }
+  
+  .venue-location {
+    color: #333;
+    font-size: 0.9em;
+  }
+  
+  @media (max-width: 768px) {
+    .venue-card {
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .venue-card {
+      flex-direction: column;
+      width: 100%; /* Use full width for smaller screens */
+    }
+  }
+  

@@ -71,7 +71,6 @@ const Testimonials = () => {
           </div>
         ))}
       </div>
-      <button className="view-more" onClick={handleViewMoreClick}>View More</button>
     </section>
   );
 }

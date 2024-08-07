@@ -1,57 +1,111 @@
 /* Full-page layout */
-.event-management-page {
-    background-size: cover;
-    font-family: 'Poppins', sans-serif;
-    color: #000000; /* Black text color for better contrast */
-    width: 80vw; /* Adjust width as needed */
-    height: 100vh;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    padding-bottom: 30px; /* Reserve space for the fixed map */
-    position: relative; /* Ensure the map can be positioned fixed */
-    text-align: center; /* Center-align all text within this container */
-  }
-  
-.header {
-    text-align: center;
-    margin-bottom: 20px;
+.event-management-page06 {
+  background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  color: #000000; /* Black text color for better contrast */
+  width: 80vw; /* Adjust width as needed */
+  height: 100vh;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  padding-bottom: 30px; /* Reserve space for the fixed map */
+  position: relative; /* Ensure the map can be positioned fixed */
+  text-align: center; /* Center-align all text within this container */
 }
 
-.event-list {
-    margin: 20px auto;
-    padding: 0;
-    list-style-type: none;
-    text-align: center;
+.header06 {
+  text-align: center;
+  margin-bottom: 30px; /* Adjusted for consistency with venue header */
 }
 
-.event-item {
-    margin-bottom: 15px; /* Increased margin */
-    border-radius: 8px;
-    background-color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.event-list06 {
+  margin: 20px auto;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
 }
 
-.event-details {
-    flex: 1;
+.event-item06 {
+  margin-bottom: 20px; /* Increased margin for consistency */
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+  border: 2px solid transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: border 0.3s, box-shadow 0.3s;
+  padding: 15px; /* Added padding for consistency */
 }
-.join-button {
-    border-radius: 50px;
-    background: blue;
-    white-space: nowrap;
-    padding: 10px 22px;
-    color: #010606;
-    font-size: 16px;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    text-decoration: none;
+
+.event-item06:hover {
+  border-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.event-details06 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center text vertically */
+  align-items: center; /* Center text horizontally */
+  text-align: center; /* Align text to the center */
+}
+
+.event-image06 {
+  width: 300px; /* Adjust width like venue-image */
+  height: 220px; /* Adjust height like venue-image */
+  object-fit: cover; /* Cover the area without distortion */
+  border-radius: 8px;
+}
+
+.join-button06 {
+  border-radius: 50px;
+  background: #F7E700; /* Bright yellow background */
+  white-space: nowrap;
+  padding: 10px 22px;
+  color: #010606; /* Dark text color for contrast */
+  font-size: 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.join-button06:hover {
+  background: #fff;
+  color: #010606;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .event-management-page06 {
+    width: 100vw;
+    padding-bottom: 20px;
   }
-  
-  .join-button:hover {
-    transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
+
+  .event-item06 {
+    flex-direction: column;
+    align-items: flex-start;
   }
+
+  .event-image06 {
+    width: 100%; /* Full width for smaller screens */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .join-button06 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .event-item06 {
+    width: 100%;
+  }
+
+  .event-image06 {
+    width: 100%; /* Full width for very small screens */
+    height: auto; /* Maintain aspect ratio */
+  }
+}

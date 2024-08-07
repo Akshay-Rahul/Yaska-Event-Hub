@@ -25,4 +25,12 @@ public class FeedbackService {
     public List<Feedback> getAllFeedbacks() {
         return feedbackRepository.findAll();
     }
+
+    public boolean deleteFeedbackById(Long id) {
+        if (feedbackRepository.existsById(id)) {
+            feedbackRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
 }

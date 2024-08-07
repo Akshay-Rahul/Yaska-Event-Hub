@@ -37,18 +37,18 @@ const EventPage = () => {
   }
 
   return (
-    <div className="event-page">
+    <div className="event-page04">
       <h2>Joined Events</h2>
       {user.joinedEvents && user.joinedEvents.length > 0 ? (
-        <div className="event-list">
+        <div className="event-list04">
           {user.joinedEvents.map((event) => (
-            <div key={event.id} className="event-item">
+            <div key={event.id} className="event-item04">
               <img
                 src={event.eventImage || 'https://via.placeholder.com/200'}
                 alt={event.eventName}
-                className="event-image"
+                className="event-image04"
               />
-              <div className="event-details">
+              <div className="event-details04">
                 <h3>{event.eventName}</h3>
                 <p>
                   <strong>Date:</strong> {event.eventDate}
@@ -58,9 +58,6 @@ const EventPage = () => {
                 </p>
                 <p>
                   <strong>Description:</strong> {event.eventDescription}
-                </p>
-                <p>
-                  <strong>Category:</strong> {event.eventCategory}
                 </p>
                 <p>
                   <strong>Organizer:</strong> {event.eventOrganizer || 'Unknown'}

@@ -34,4 +34,14 @@ public class FeedbackController {
         List<Feedback> feedbacks = feedbackService.getAllFeedbacks();
         return ResponseEntity.ok(feedbacks);
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteFeedback(@PathVariable Long id) {
+        boolean deleted = feedbackService.deleteFeedbackById(id);
+        if (deleted) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }

@@ -17,7 +17,6 @@ public class JoinedEvent {
     private String eventDate;
     private String eventLocation;
     private String eventDescription;
-    private String eventCategory;
     private String eventOrganizer;
     private String eventImage; 
 }

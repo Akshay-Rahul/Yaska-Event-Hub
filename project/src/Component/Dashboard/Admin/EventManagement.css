@@ -1,130 +1,166 @@
-/* Event Management Styles */
-.event-management-page {
-
-  font-family: 'Arial', sans-serif;
-  background: url('https://source.unsplash.com/1600x900/?events') no-repeat center center; /* Background image */
-  background-size: cover;
-  color: #fff; /* Light text for better contrast on dark background */
-  margin-right: 40px;
-}
-
-.header {
+.event-management-page01 {
+  padding: 30px;
   text-align: center;
+}
+
+.event-header01 h1 {
+  color: #000;
   margin-bottom: 30px;
 }
 
-.header h1 {
-  font-size: 2.5rem;
-  color:black; /* Light color for the header */
-  margin: 0;
+.event-list01 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px;
 }
 
-.image-gallery-container {
-  margin-bottom: 30px;
-}
-
-.image-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-  gap: 20px;
-}
-
-.image-item {
-  border-radius: 15px; /* Rounded corners for a softer look */
-  overflow: hidden;
-  position: relative;
+.event-card01 {
+  width: 420px; /* Further increased width */
+  max-width: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  overflow: hidden;
+  transition: border 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
-.image-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-  filter: brightness(0.8); /* Darken image slightly on hover */
+.event-card01:hover {
+  border-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-.image-item img {
+.event-image01 {
+  width: 100%;
+  height: 270px; /* Further increased height */
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.event-card01 h3 {
+  font-size: 1.4em;
+  margin: 10px 0;
+  color: #000;
+}
+
+.event-card01 p {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.modal201 {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.image-text {
-  position: absolute;
-  bottom: 15px;
-  left: 15px;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 1rem; /* Slightly larger font */
-  font-weight: bold; /* Bold text for emphasis */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Shadow for text box */
+.modal2-content01 {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 520px; /* Smaller width */
+  max-width: 90%;
+  height: 650px; /* Shorter height */
+  overflow-y: auto; /* Adds scroll if content exceeds height */
 }
 
-.booking-form {
-  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-  border-radius: 10px; /* Rounded corners */
-  padding: 30px; /* Increased padding for better spacing */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
-  max-width: 700px; /* Increased form width */
-  margin: 0 auto; /* Center align the form */
-  backdrop-filter: blur(10px); /* Blur effect on background */
-}
-
-.booking-form h2 {
+.modal2-content01 h2 {
   margin-bottom: 20px;
-  color: #333; /* Darker color for the heading */
+  color: #000;
 }
 
-.booking-form form div {
-  margin-bottom: 20px; /* Increased margin between form fields */
+.modal2-content01 form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.booking-form label {
-  display: block;
-  margin-bottom: 8px; /* Increased margin for labels */
-  font-weight: bold;
-  color: #333; /* Darker color for labels */
+.modal2-content01 form div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
-.booking-form input,
-.booking-form textarea {
+.modal2-content01 label {
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.modal2-content01 input,
+.modal2-content01 textarea,
+.modal2-content01 select {
   width: 100%;
-  padding: 12px;
-  border-radius: 5px;
+  padding: 8px;
   border: 1px solid #ccc;
-  font-size: 1rem;
-  box-sizing: border-box; /* Ensure padding is included in width */
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-.booking-form input[type="date"],
-.booking-form input[type="time"] {
-  padding: 10px; /* Adjust padding for date/time inputs */
+.modal2-content01 textarea {
+  resize: vertical;
 }
 
-.booking-form button {
-  background-color: #3498db; /* Blue button for primary action */
-  color: #fff;
+.modal2-content01 select {
+  font-size: 16px; /* Ensure font size matches the rest of the form */
+  background-color: #fff; /* Consistent background color */
+  color: #333; /* Text color */
+  cursor: pointer; /* Change cursor to pointer for better UX */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  box-sizing: border-box;
+  position: relative; /* Ensure dropdown is positioned relative to its container */
+  z-index: 1000; /* Ensure dropdown appears above other elements */
+}
+
+.modal2-content01 select option {
+  padding: 8px; /* Padding for dropdown options */
+}
+
+.modal2-content01 input:focus,
+.modal2-content01 textarea:focus,
+.modal2-content01 select:focus {
+  border-color: #ffcc00; /* Highlight border color on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow on focus */
+}
+
+.button-group01 button {
+  background-color: #ffcc00; /* Example color, adjust as needed */
+  color: white;
   border: none;
-  padding: 12px 24px; /* Larger padding for a more prominent button */
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  margin-right: 10px; /* Margin between buttons */
+  font-size: 16px;
 }
 
-.booking-form button:hover {
-  background-color: #2980b9; /* Darker blue on hover */
-  transform: scale(1.02); /* Slightly enlarge button on hover */
+.button-group01 button:hover {
+  background-color: #ff9900; /* Example hover color, adjust as needed */
 }
 
-.booking-form button:last-child {
-  background-color: #e74c3c; /* Red button for secondary action */
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .event-card01 {
+    width: 90%;
+  }
 
-.booking-form button:last-child:hover {
-  background-color: #c0392b; /* Darker red on hover */
+  .modal2-content01 {
+    width: 95%;
+    height: auto; /* Allow modal height to adjust based on content */
+  }
 }
