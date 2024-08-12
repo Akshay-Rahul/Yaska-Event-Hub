@@ -10,7 +10,8 @@ import './Register.css';
 const UserRegister = () => {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [formData, setFormData] = useState({
-    username: '',
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -40,12 +41,13 @@ const UserRegister = () => {
     }
 
     try {
-      const { username, email, password } = formData;
-      await axios.post('http://localhost:8080/users', {
-        username,
+      const { firstName, lastName, email, password } = formData;
+      await axios.post('http://localhost:8080/api/users/register', {
+        firstName,
+        lastName,
         email,
         password,
-        role: 'user'
+        roles: 'ROLE_USER'
       });
       new Noty({
         type: 'success',
@@ -72,12 +74,24 @@ const UserRegister = () => {
           <div className='input-box'>
             <input
               type="text"
-              name="username"
-              placeholder='Username'
-              value={formData.username}
+              name="firstName"
+              placeholder='First Name'
+              value={formData.firstName}
               onChange={handleInputChange}
               required
-              aria-label="Username"
+              aria-label="First Name"
+            />
+            <FaUser className='icon' />
+          </div>
+          <div className='input-box'>
+            <input
+              type="text"
+              name="lastName"
+              placeholder='Last Name'
+              value={formData.lastName}
+              onChange={handleInputChange}
+              required
+              aria-label="Last Name"
             />
             <FaUser className='icon' />
           </div>

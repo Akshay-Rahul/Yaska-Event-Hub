@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Check local storage for user data on initial render
+    // Retrieve user data from local storage on initial render
     const storedUser = JSON.parse(localStorage.getItem('user'));
     if (storedUser) {
       setUser(storedUser);
@@ -22,11 +22,19 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('user'); // Clear user data from localStorage
+    localStorage.removeItem('user'); // Remove user data from localStorage
+  };
+
+  const isAuthenticated = () => {
+    return user !== null; // Check if user is logged in
+  };
+
+  const getUser = () => {
+    return user; // Retrieve current user data
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout, isAuthenticated, getUser }}>
       {children}
     </AuthContext.Provider>
   );

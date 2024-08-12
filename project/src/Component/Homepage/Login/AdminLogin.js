@@ -10,7 +10,7 @@ import { useAuth } from '../AuthContext';
 
 const AdminLogin = () => {
   const [loginData, setLoginData] = useState({
-    username: '',
+    email: '',
     password: ''
   });
 
@@ -27,33 +27,40 @@ const AdminLogin = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.get('http://localhost:8080/users');
-      const admin = response.data.find(user => 
-        user.username === loginData.username && user.password === loginData.password && user.role === 'admin');
+      const response = await axios.post('http://localhost:8080/api/users/login', {
+        email: loginData.email,
+        password: loginData.password
+      });
 
-      if (admin) {
-        login(admin);
-        new Noty({
-          type: 'success',
-          layout: 'topRight',
-          text: 'Login successful',
-          timeout: 3000,
-        }).show();
-        navigate('/admindashboard');
-      } else {
-        new Noty({
-          type: 'error',
-          layout: 'topRight',
-          text: 'Invalid username or password',
-          timeout: 3000,
-        }).show();
-      }
+      const { accessToken } = response.data;
+
+      // Save token in AuthContext or localStorage
+      login(accessToken);
+
+      new Noty({
+        type: 'success',
+        layout: 'topRight',
+        text: 'Login successful',
+        timeout: 3000,
+      }).show();
+
+      navigate('/admindashboard');
     } catch (error) {
-      console.error('There was an error!', error);
+      let errorMessage = 'An error occurred'; // Default error message
+
+      if (error.response) {
+        // Check if the error response contains a specific message
+        if (error.response.status === 401) {
+          errorMessage = 'Incorrect email or password'; // Customize error message for 401
+        } else {
+          errorMessage = error.response.data.message || 'An error occurred';
+        }
+      }
+
       new Noty({
         type: 'error',
         layout: 'topRight',
-        text: 'There was an error during login. Please try again.',
+        text: errorMessage,
         timeout: 3000,
       }).show();
     }
@@ -70,13 +77,13 @@ const AdminLogin = () => {
           <h1>Admin Login</h1>
           <div className='input-box'>
             <input 
-              type="text" 
-              name="username"
-              placeholder='Username' 
-              value={loginData.username}
+              type="email" 
+              name="email"
+              placeholder='Email' 
+              value={loginData.email}
               onChange={handleInputChange}
               required 
-              aria-label="Username" 
+              aria-label="Email" 
             />
             <FaUser className='icon' />
           </div>

@@ -7,8 +7,7 @@ import {
 import { VscFeedback } from "react-icons/vsc";
 import { MdEvent } from "react-icons/md";
 import { MdEventAvailable } from "react-icons/md";
-import './AdminDashboard.css'; // Ensure this path is correct
-
+import './AdminDashboard.css';
 import { useAuth } from '../../Homepage/AuthContext';
 import Navbar2 from './Navbar2';
 import AdminOverview from './AdminOverview';
@@ -20,6 +19,7 @@ import Reports from './Reports';
 import VenuesPage from './Venues';
 import FeedbackReceiver from './Feedback2';
 import Attendees from './Attend';
+import Sponsors from './Sponers';
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -76,7 +76,7 @@ const AdminDashboard = () => {
         case 'payments':
           return <Home />;
         case 'sponsors':
-          return <Home />;
+          return <Sponsors />;
         case 'feedback':
           return <FeedbackReceiver />;
         default:

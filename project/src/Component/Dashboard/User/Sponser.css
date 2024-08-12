@@ -1,0 +1,173 @@
+/* Container for the entire sponsors section */
+.sponsors-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh; /* Full viewport height */
+  min-width: 80vw; /* Full viewport height */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  color: #333;
+  font-family: 'Arial', sans-serif; /* Added font style */
+}
+
+/* Header styling */
+.sponsors-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 36px; /* Increased font size */
+  color: black;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Enhanced text shadow */
+}
+
+/* Button for adding new sponsors */
+.btn-add-sponsor {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  margin-bottom: 20px;
+}
+
+.btn-add-sponsor:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px); /* Lift effect on hover */
+}
+
+/* List of sponsors */
+.sponsors-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the list items */
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the list within the page */
+}
+
+/* Each sponsor item */
+.sponsor-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width: calc(33.33% - 20px); /* Three items per row */
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(10px);
+  min-height: 250px; /* Ensure consistent height */
+  box-sizing: border-box;
+}
+
+.sponsor-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Sponsor logo */
+.sponsor-logo img {
+  max-width: 100px; /* Adjust the size as needed */
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* Details of each sponsor */
+.sponsor-details {
+  flex: 1;
+  text-align: center;
+}
+
+.sponsor-details h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.sponsor-details p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Button for removing a sponsor */
+.btn-remove-sponsor {
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #dc3545;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-remove-sponsor:hover {
+  background-color: #c82333;
+}
+
+/* Form for adding a new sponsor */
+.sponsor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto; /* Center the form */
+}
+
+.sponsor-form label {
+  font-size: 16px;
+  color: #333;
+}
+
+.sponsor-form input {
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.sponsor-form button {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sponsor-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .sponsor-item {
+      width: calc(50% - 20px); /* Two items per row */
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsor-item {
+      width: calc(100% - 20px); /* Single item per row */
+  }
+}

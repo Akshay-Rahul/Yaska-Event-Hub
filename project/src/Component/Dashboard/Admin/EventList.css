@@ -1,279 +1,177 @@
-.event-list-page02 {
+/* src/EventList.css */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+.event-list-page {
   padding: 20px;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
-  color: #000000; /* Black text color for better contrast */
 }
 
-.event-h1-02 {
+.event-list-title {
   color: #000;
-  margin-bottom: 40px; /* Increased margin for more space */
+  margin-bottom: 40px;
 }
 
-.event-list02 {
+.event-list {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center the cards horizontally */
-  gap: 30px; /* Increased gap between cards */
+  align-items: center;
+  gap: 30px;
 }
 
-.event-card02 {
-  width: 950px; /* Increased width */
-  max-width: 100%; /* Ensure it doesn't overflow on small screens */
-  background-color: rgba(255, 255, 255, 0.8);
+.event-card {
+  width: 950px;
+  max-width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
   border: 2px solid transparent;
-  border-radius: 10px; /* Slightly larger border-radius */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Larger shadow */
-  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: border 0.3s, box-shadow 0.3s;
   display: flex;
-  align-items: center; /* Center content vertically */
-  gap: 20px; /* Increased gap */
+  align-items: center;
+  gap: 20px;
 }
 
-.event-card02:hover {
+.event-card:hover {
   border-color: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5); /* Larger shadow on hover */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
 }
 
-.event-image02 {
-  width: 330px; /* Increased width */
-  height: 240px; /* Increased height */
+.event-image {
+  width: 330px;
+  height: 240px;
   object-fit: cover;
-  border-radius: 10px; /* Slightly larger border-radius */
+  border-radius: 10px;
 }
 
-.event-details02 {
+.event-details {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center text vertically */
-  align-items: center; /* Center text horizontally */
-  text-align: center; /* Align text to the center */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.event-name02 {
-  font-size: 1.8em; /* Larger font size */
-  margin: 15px 0; /* Increased margin */
+.event-name {
+  font-size: 1.8em;
+  margin: 15px 0;
   color: #000;
 }
 
-.event-location02 {
+.event-info {
   color: #333;
-  font-size: 1em; /* Larger font size */
+  font-size: 1em;
 }
 
-.edit-event-modal02,
-.confirm-delete02 {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 20px; /* Increased padding */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Larger shadow */
-  z-index: 1000;
-  max-width: 450px; /* Increased max-width */
-  width: 100%;
+.event-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
 }
 
-.edit-event-modal02 h3,
-.edit-event-modal02 label,
-.edit-event-modal02 input,
-.edit-event-modal02 textarea,
-.edit-event-modal02 button,
-.confirm-delete02 h3,
-.confirm-delete02 p,
-.confirm-delete02 button {
-  font-size: 16px; /* Larger font size */
-}
-
-.edit-event-modal02 label,
-.confirm-delete02 label {
-  display: block;
-  margin-bottom: 12px; /* Increased margin */
-  font-weight: bold;
-}
-
-.edit-event-modal02 input,
-.edit-event-modal02 textarea,
-.confirm-delete02 input,
-.confirm-delete02 textarea {
-  width: 100%;
-  padding: 12px; /* Increased padding */
-  margin-top: 6px; /* Increased margin */
-  border: 1px solid #ddd;
-  border-radius: 8px; /* Slightly larger border-radius */
-}
-
-.edit-event-modal02 button,
-.confirm-delete02 button {
-  margin-right: 10px; /* Increased margin */
-  padding: 10px 18px; /* Increased padding */
-  font-size: 16px; /* Larger font size */
-  border: none;
-  border-radius: 8px; /* Slightly larger border-radius */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.edit-event-modal02 button:first-child,
-.confirm-delete02 button:first-child {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.edit-event-modal02 button:first-child:hover,
-.confirm-delete02 button:first-child:hover {
-  background-color: #0056b3;
-}
-
-.edit-event-modal02 button:last-child,
-.confirm-delete02 button:last-child {
-  background-color: #dc3545;
-  color: #fff;
-}
-
-.edit-event-modal02 button:last-child:hover,
-.confirm-delete02 button:last-child:hover {
-  background-color: #c82333;
-}
-
-@media (max-width: 768px) {
-  .event-card02 {
-    padding: 15px; /* Increased padding */
-  }
-}
-
-@media (max-width: 480px) {
-  .event-card02 {
-    flex-direction: column;
-    width: 100%; /* Use full width for smaller screens */
-  }
-}
-.icon-edit02,
-.icon-delete02 {
-  font-size: 24px; /* Increase the font size for larger icons */
-  margin: 0 10px; /* Space between icons and content */
+.icon-edit,
+.icon-delete {
+  font-size: 24px;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
-.icon-edit02:hover {
-  color: #007bff; /* Color change on hover for edit icon */
+.icon-edit:hover {
+  color: #007bff;
 }
 
-.icon-delete02:hover {
-  color: #dc3545; /* Color change on hover for delete icon */
+.icon-delete:hover {
+  color: #dc3545;
 }
-/* src/EventList.css */
 
-/* Modal Styles */
-.modal201 {
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-.modal2-content01 {
+.modal-content {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 520px; /* Smaller width */
-  max-width: 90%;
-  height: 650px; /* Shorter height */
-  overflow-y: auto; /* Adds scroll if content exceeds height */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  text-align: left;
 }
 
-.modal2-content01 h2 {
-  margin-bottom: 20px;
-  color: #000;
+.modal-content h2 {
+  margin-top: 0;
 }
 
-.modal2-content01 form {
+.modal-content form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 }
 
-.modal2-content01 form div {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-}
-
-.modal2-content01 label {
-  margin-bottom: 5px;
-  color: #333;
-}
-
-.modal2-content01 input,
-.modal2-content01 textarea,
-.modal2-content01 select {
+.modal-content input,
+.modal-content textarea {
   width: 100%;
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-sizing: border-box;
+  font-size: 1em;
 }
 
-.modal2-content01 textarea {
-  resize: vertical;
-}
-
-.modal2-content01 select {
-  font-size: 16px;
-  background-color: #fff;
-  color: #333;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 8px;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 1000;
-}
-
-.modal2-content01 select option {
-  padding: 8px;
-}
-
-.modal2-content01 input:focus,
-.modal2-content01 textarea:focus,
-.modal2-content01 select:focus {
-  border-color: #ffcc00;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.button-group01 button {
-  background-color: #ffcc00;
-  color: white;
+.modal-content button {
+  background-color: #fdd835;
+  color: #fff;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 10px 15px;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-.button-group01 button:hover {
-  background-color: #ff9900;
+.modal-content button:hover {
+  background-color: #fbc02d;
 }
 
-/* Responsive Design */
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
 @media (max-width: 768px) {
-  .modal2-content01 {
-    width: 95%;
-    height: auto; /* Allow modal height to adjust based on content */
+  .event-list {
+    gap: 20px;
+  }
+
+  .event-card {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .event-image {
+    width: 100%;
+    height: 200px;
+  }
+
+  .event-details {
+    align-items: flex-start;
+  }
+
+  .modal-content {
+    padding: 15px;
   }
 }

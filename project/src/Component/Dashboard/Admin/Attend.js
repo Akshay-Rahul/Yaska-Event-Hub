@@ -1,9 +1,14 @@
 import React, { useState } from "react";
+import Modal from "react-modal";
+import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import "./Attend.css";
+
+// Setting up the modal root element for accessibility
+Modal.setAppElement("#root");
 
 const Attendees = () => {
   // Sample data for attendees
-  const attendees = [
+  const [attendees, setAttendees] = useState([
     { name: "John Doe", event: "Tech Conference", amountPaid: "$100", registrationDate: "2024-07-10", venueId: 1 },
     { name: "Jane Smith", event: "Business Summit", amountPaid: "$150", registrationDate: "2024-07-12", venueId: 2 },
     { name: "Alice Johnson", event: "Networking Event", amountPaid: "$200", registrationDate: "2024-07-14", venueId: 3 },
@@ -27,7 +32,7 @@ const Attendees = () => {
     { name: "Ethan Allen", event: "Tech Conference", amountPaid: "$100", registrationDate: "2024-08-21", venueId: 3 },
     { name: "Charlotte King", event: "Business Summit", amountPaid: "$150", registrationDate: "2024-08-23", venueId: 4 },
     { name: "Amelia Scott", event: "Networking Event", amountPaid: "$200", registrationDate: "2024-08-25", venueId: 5 },
-  ];
+  ]);
 
   // Venue data
   const venues = [
@@ -42,11 +47,46 @@ const Attendees = () => {
     { id: 9, name: "Boston Convention and Exhibition Center", location: "Boston, MA" },
   ];
 
+
   const [searchTerm, setSearchTerm] = useState("");
+  const [editModalIsOpen, setEditModalIsOpen] = useState(false);
+  const [deleteModalIsOpen, setDeleteModalIsOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(null);
+  const [editedAttendee, setEditedAttendee] = useState(null);
 
   const filteredAttendees = attendees.filter((attendee) =>
     attendee.name.toLowerCase().startsWith(searchTerm.toLowerCase())
   );
+
+  const handleEdit = (index) => {
+    setCurrentIndex(index);
+    setEditedAttendee({ ...attendees[index] });
+    setEditModalIsOpen(true);
+  };
+
+  const handleDelete = (index) => {
+    setCurrentIndex(index);
+    setDeleteModalIsOpen(true);
+  };
+
+  const confirmDelete = () => {
+    if (currentIndex !== null) {
+      const updatedAttendees = attendees.filter((_, i) => i !== currentIndex);
+      setAttendees(updatedAttendees);
+      setDeleteModalIsOpen(false);
+    }
+  };
+
+  const handleModalClose = () => {
+    setEditModalIsOpen(false);
+  };
+
+  const handleModalSave = () => {
+    const updatedAttendees = [...attendees];
+    updatedAttendees[currentIndex] = editedAttendee;
+    setAttendees(updatedAttendees);
+    handleModalClose();
+  };
 
   return (
     <div className="attendees-container">
@@ -67,6 +107,7 @@ const Attendees = () => {
             <th>Date of Registration</th>
             <th>Venue Name</th>
             <th>Location</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -80,11 +121,104 @@ const Attendees = () => {
                 <td>{attendee.registrationDate}</td>
                 <td>{venue?.name || "N/A"}</td>
                 <td>{venue?.location || "N/A"}</td>
+                <td>
+                  <button onClick={() => handleEdit(index)} className="edit-button">
+                    <FaEdit />
+                  </button>
+                  <button onClick={() => handleDelete(index)} className="delete-button">
+                    <FaTrashAlt />
+                  </button>
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+
+      {/* Modal for editing attendee */}
+      {editModalIsOpen && (
+        <Modal
+          isOpen={editModalIsOpen}
+          onRequestClose={handleModalClose}
+          contentLabel="Edit Attendee"
+          className="edit-modal"
+          overlayClassName="edit-modal-overlay"
+        >
+          <h2>Edit Attendee</h2>
+          <form>
+            <label>Name:
+              <input
+                type="text"
+                value={editedAttendee?.name || ""}
+                onChange={(e) => setEditedAttendee({ ...editedAttendee, name: e.target.value })}
+              />
+            </label>
+            <label>Event:
+              <input
+                type="text"
+                value={editedAttendee?.event || ""}
+                onChange={(e) => setEditedAttendee({ ...editedAttendee, event: e.target.value })}
+              />
+            </label>
+            <label>Amount Paid:
+              <input
+                type="text"
+                value={editedAttendee?.amountPaid || ""}
+                onChange={(e) => setEditedAttendee({ ...editedAttendee, amountPaid: e.target.value })}
+              />
+            </label>
+            <label>Registration Date:
+              <input
+                type="date"
+                value={editedAttendee?.registrationDate || ""}
+                onChange={(e) => setEditedAttendee({ ...editedAttendee, registrationDate: e.target.value })}
+              />
+            </label>
+            <label>Venue:
+              <select
+                value={editedAttendee?.venueId || ""}
+                onChange={(e) => setEditedAttendee({ ...editedAttendee, venueId: parseInt(e.target.value) })}
+              >
+                {venues.map((venue) => (
+                  <option key={venue.id} value={venue.id}>
+                    {venue.name}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <div className="modal-buttons">
+              <button type="button" onClick={handleModalSave} className="save-button">
+                Save
+              </button>
+              <button type="button" onClick={handleModalClose} className="cancel-button">
+                Cancel
+              </button>
+            </div>
+          </form>
+        </Modal>
+      )}
+
+      {/* Modal for deleting attendee */}
+      {deleteModalIsOpen && (
+        <Modal
+          isOpen={deleteModalIsOpen}
+          onRequestClose={() => setDeleteModalIsOpen(false)}
+          contentLabel="Confirm Delete"
+          className="delete-modal"
+          overlayClassName="delete-modal-overlay"
+        >
+          <h2>Confirm Delete</h2>
+          <p>Are you sure you want to delete this attendee?</p>
+          <div className="modal-buttons">
+            <button type="button" onClick={confirmDelete} className="confirm-button">
+              Confirm
+            </button>
+            <button type="button" onClick={() => setDeleteModalIsOpen(false)} className="cancel-delete-button">
+              Cancel
+            </button>
+          </div>
+        </Modal>
+      )}
     </div>
   );
 };

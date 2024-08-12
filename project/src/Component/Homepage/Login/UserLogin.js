@@ -3,14 +3,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Login.css';
 import { FaUser, FaEye, FaEyeSlash } from 'react-icons/fa';
-import { useAuth } from '../AuthContext';
 import Noty from 'noty';
 import 'noty/lib/noty.css';
 import 'noty/lib/themes/mint.css';
+import { useAuth } from '../AuthContext';
 
 const UserLogin = () => {
   const [loginData, setLoginData] = useState({
-    username: '',
+    email: '',
     password: ''
   });
 
@@ -27,33 +27,44 @@ const UserLogin = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.get('http://localhost:8080/users');
-      const user = response.data.find(user => 
-        user.username === loginData.username && user.password === loginData.password && user.role === 'user');
+      const response = await axios.post('http://localhost:8080/api/users/login', {
+        email: loginData.email,
+        password: loginData.password
+      });
 
-      if (user) {
-        login(user);
-        new Noty({
-          type: 'success',
-          layout: 'topRight',
-          text: 'Login successful',
-          timeout: 3000,
-        }).show();
-        navigate('/userdashboard');
-      } else {
-        new Noty({
-          type: 'error',
-          layout: 'topRight',
-          text: 'Invalid username or password',
-          timeout: 3000,
-        }).show();
-      }
+      // Assuming response contains token
+      const { accessToken } = response.data;
+
+      // Save token in AuthContext or localStorage
+      login(accessToken);
+
+      new Noty({
+        type: 'success',
+        layout: 'topRight',
+        text: 'Login successful',
+        timeout: 3000,
+      }).show();
+
+      navigate('/userdashboard');
     } catch (error) {
-      console.error('There was an error!', error);
+      let errorMessage = 'An error occurred';
+
+      if (error.response) {
+        if (error.response.data) {
+          errorMessage = typeof error.response.data === 'string'
+            ? error.response.data
+            : JSON.stringify(error.response.data);
+        } else if (error.response.status) {
+          errorMessage = `Error ${error.response.status}`;
+        }
+      }
+
+      console.error('Login error:', error);
+
       new Noty({
         type: 'error',
         layout: 'topRight',
-        text: 'There was an error during login. Please try again.',
+        text: errorMessage,
         timeout: 3000,
       }).show();
     }
@@ -70,13 +81,13 @@ const UserLogin = () => {
           <h1>User Login</h1>
           <div className='input-box'>
             <input 
-              type="text" 
-              name="username"
-              placeholder='Username' 
-              value={loginData.username}
+              type="email" 
+              name="email"
+              placeholder='Email' 
+              value={loginData.email}
               onChange={handleInputChange}
               required 
-              aria-label="Username" 
+              aria-label="Email" 
             />
             <FaUser className='icon' />
           </div>

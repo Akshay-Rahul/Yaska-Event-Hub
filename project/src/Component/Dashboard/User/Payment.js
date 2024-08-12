@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import Noty from 'noty';
 import 'noty/lib/noty.css';
 import 'noty/lib/themes/mint.css';
@@ -23,7 +22,6 @@ const Tickets = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const event = location.state?.event; // Get event details from state
-  const [userId] = useState("1"); // Replace with actual user ID from your auth system
 
   const [paymentDetails, setPaymentDetails] = useState({
     nameOnCard: '',
@@ -32,7 +30,6 @@ const Tickets = () => {
     cvv: '',
   });
 
-  const [isModalOpen, setModalOpen] = useState(false);
   const [isOrderSummaryOpen, setOrderSummaryOpen] = useState(false);
 
   const handleChange = (e) => {
@@ -46,21 +43,6 @@ const Tickets = () => {
     e.preventDefault(); // Prevent default form submission
 
     try {
-      // Create a new joined event with image URL
-      const newJoinedEvent = {
-        eventId: event.id,
-        eventName: event.title,
-        eventDate: event.date,
-        eventLocation: event.location,
-        eventDescription: event.description,
-        eventCategory: event.category,
-        eventOrganizer: event.organizerName, // Ensure this matches your backend model
-        eventImage: event.img || 'https://via.placeholder.com/200', // Add the image URL
-      };
-
-      // Post the new joined event
-      await axios.post(`http://localhost:8080/users/${userId}/join-event`, newJoinedEvent);
-
       // Show the success notification
       new Noty({
         type: 'success',
@@ -69,8 +51,8 @@ const Tickets = () => {
         timeout: 3000,
       }).show();
 
-      // Optionally, navigate to another page
-      navigate('/userdashboard'); // Navigate to MyEvents or another page if needed
+      // Navigate to homepage
+      navigate('/userdashboard'); // Adjust to your home page route
     } catch (error) {
       console.error('Error joining the event:', error);
       new Noty({
@@ -97,7 +79,7 @@ const Tickets = () => {
             <p>Location: <span>{event?.location || 'N/A'}</span></p>
           </div>
 
-          <form className="payment-form" onSubmit={handleJoin}>
+          <form className="payment-form" onSubmit={(e) => e.preventDefault()}>
             <h3>Payment Information</h3>
             <label>
               Name on Card

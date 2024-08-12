@@ -7,7 +7,7 @@ const SignIn = () => {
   const navigate = useNavigate();
 
   const handleAdminClick = () => {
-    navigate('/adminregister');
+    navigate('/adminlogin');
   };
 
   const handleUserClick = () => {

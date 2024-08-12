@@ -10,8 +10,8 @@ const Modal = ({ isOpen, onClose, children }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="modal201" onClick={onClose}>
-      <div className="modal2-content01" onClick={(e) => e.stopPropagation()}>
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         {children}
       </div>
     </div>
@@ -73,23 +73,23 @@ const EventList = () => {
   }
 
   return (
-    <div className="event-list-page02">
-      <h2 className="event-h1-02">Event List</h2>
-      <div className="event-list02">
+    <div className="event-list-page">
+      <h2 className="event-list-title">Event List</h2>
+      <div className="event-list">
         {events.map(event => (
-          <div key={event.id} className="event-card02">
-            <img src={event.img || 'https://via.placeholder.com/300'} alt={event.title} className="event-image02" />
-            <div className="event-details02">
-              <h4 className="event-name02">{event.title}</h4>
-              <p className="event-location02"><strong>Date:</strong> {event.date}</p>
-              <p className="event-location02"><strong>Time:</strong> {event.startTime} - {event.endTime}</p>
-              <p className="event-location02"><strong>Location:</strong> {event.location}</p>
-              <p className="event-location02"><strong>Description:</strong> {event.description}</p>
-              <p className="event-location02"><strong>Organizer:</strong> {event.organizerName}</p>
+          <div key={event.id} className="event-card">
+            <img src={event.img || 'https://via.placeholder.com/300'} alt={event.title} className="event-image" />
+            <div className="event-details">
+              <h4 className="event-name">{event.title}</h4>
+              <p className="event-info"><strong>Date:</strong> {event.date}</p>
+              <p className="event-info"><strong>Time:</strong> {event.startTime} - {event.endTime}</p>
+              <p className="event-info"><strong>Location:</strong> {event.location}</p>
+              <p className="event-info"><strong>Description:</strong> {event.description}</p>
+              <p className="event-info"><strong>Organizer:</strong> {event.organizerName}</p>
             </div>
-            <div className="event-actions02">
-              <FontAwesomeIcon icon={faEdit} className="icon-edit02" onClick={() => handleEdit(event)} />
-              <FontAwesomeIcon icon={faTrash} className="icon-delete02" onClick={() => handleDelete(event.id)} />
+            <div className="event-actions">
+              <FontAwesomeIcon icon={faEdit} className="icon-edit" onClick={() => handleEdit(event)} />
+              <FontAwesomeIcon icon={faTrash} className="icon-delete" onClick={() => handleDelete(event.id)} />
             </div>
           </div>
         ))}
@@ -139,7 +139,7 @@ const EventList = () => {
               <input type="text" name="organizerName" value={editEvent?.organizerName || ''} onChange={(e) => setEditEvent({ ...editEvent, organizerName: e.target.value })} required />
             </label>
           </div>
-          <div className="button-group01">
+          <div className="button-group">
             <button type="submit">Save</button>
             <button type="button" onClick={() => setEditEvent(null)}>Cancel</button>
           </div>
@@ -148,7 +148,7 @@ const EventList = () => {
       <Modal isOpen={!!confirmDelete} onClose={cancelDelete}>
         <h2>Confirm Delete</h2>
         <p>Are you sure you want to delete this event?</p>
-        <div className="button-group01">
+        <div className="button-group">
           <button onClick={confirmDeleteEvent}>Yes</button>
           <button onClick={cancelDelete}>No</button>
         </div>

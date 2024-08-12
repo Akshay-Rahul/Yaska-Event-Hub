@@ -15,7 +15,7 @@ const EventPage = () => {
     const fetchUser = async () => {
       try {
         // Fetch user data
-        const userResponse = await axios.get(`http://localhost:8080/users/${userId}`);
+        const userResponse = await axios.get(`http://localhost:8080/api/joinedevents`);
         const userData = userResponse.data;
         setUser(userData);
       } catch (error) {

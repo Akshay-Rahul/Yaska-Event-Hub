@@ -20,6 +20,7 @@ import Reports from './Reports';
 import FeedbackForm from './FeedbackForm';
 import VenuesPage from '../Admin/Venues';
 import Attendees from './Attend';
+import Sponsors from './Sponers';
 
 const UserDashboard = () => {
   const navigate = useNavigate();
@@ -63,8 +64,6 @@ const UserDashboard = () => {
         return <UserOverview />;
       case 'events':
         return <MyEvents />;
-        case 'myevents':
-        return <EventPage />;
       case 'calendar':
         return <UserScheduler />;
       case 'attendees':
@@ -74,7 +73,7 @@ const UserDashboard = () => {
       case 'venues':
         return <VenuesPage />;
       case 'sponsors':
-        return <Home />;
+        return <Sponsors/>;
       case 'feedback':
         return <FeedbackForm />;
       default:
@@ -95,7 +94,6 @@ const UserDashboard = () => {
           {[
             { key: 'dashboard', icon: <FaTachometerAlt />, text: 'Dashboard' },
             { key: 'events', icon: <MdEvent />, text: 'Events' },
-            { key: 'myevents', icon: <MdEventAvailable />, text: 'My Events' },
             { key: 'calendar', icon: <FaCalendarAlt />, text: 'Calendar' },
             { key: 'attendees', icon: <FaUsers />, text: 'Attendees' },
             { key: 'reports', icon: <FaChartBar />, text: 'Reports' },
